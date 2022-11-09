@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import Signup from '../SignUp';
+import Login from '../LogIn';
 import Bot from "../../assets/images/bot.png"
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -16,6 +20,25 @@ import {
 // import RedirectContext from "../RedirectContext";
 // import UserContext from "../UserContext";
 //import { Header } from 'react-bootstrap';
+
+const httpLink = createHttpLink({
+    uri: '/graphql',
+  });
+
+const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem('id_token');
+    return {
+      headers: {
+        ...headers,
+        authorization: token ? `Bearer ${token}` : '',
+      },
+    };
+  });
+  
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+  });
 
 function Header() {
     // const [userDropdownVisibilityClass,setUserDropdownVisibilityClass] = useState('hidden');
@@ -79,7 +102,11 @@ const handleClose = () => {
                                 <Modal.Header closeButton>
                                     <Modal.Title>Sign Up</Modal.Title>
                                 </Modal.Header>
-                                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                                <Modal.Body>
+                                    <ApolloProvider client={client}>
+                                    <Signup/>
+                                    </ApolloProvider>
+                                    </Modal.Body>
                                 <Modal.Footer>
 
                                     <Button variant="secondary" onClick={handleClose}>
@@ -97,7 +124,11 @@ const handleClose = () => {
                                 <Modal.Header closeButton>
                                     <Modal.Title>Log In</Modal.Title>
                                 </Modal.Header>
-                                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                                <Modal.Body>
+                                <ApolloProvider client={client}>
+                                    <Login/>
+                                    </ApolloProvider>
+                                </Modal.Body>
                                 <Modal.Footer>
 
                                     <Button variant="secondary" onClick={handleClose}>
