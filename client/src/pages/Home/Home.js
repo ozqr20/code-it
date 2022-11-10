@@ -1,5 +1,5 @@
 import Sidebar from "../../components/SideBar/index";
-//import Feed from "../../components/feed/Feed";
+import Feed from "../../components/Feed/index";
 import "./home.css"
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
       
       <div className="homeContainer">
         <Sidebar />
-        {/* <Feed/> */}
+        <Feed/>
       </div>
     </>
   );
