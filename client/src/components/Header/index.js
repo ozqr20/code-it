@@ -12,7 +12,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {
-    Person,
+    Person
 } from 'react-bootstrap-icons';
 //import Button from '../Button';
 //import {Link, Router} from "react-router-dom";
@@ -23,22 +23,22 @@ import {
 
 const httpLink = createHttpLink({
     uri: '/graphql',
-  });
+});
 
 const authLink = setContext((_, { headers }) => {
     const token = localStorage.getItem('id_token');
     return {
-      headers: {
-        ...headers,
-        authorization: token ? `Bearer ${token}` : '',
-      },
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : '',
+        },
     };
-  });
-  
-  const client = new ApolloClient({
+});
+
+const client = new ApolloClient({
     link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
-  });
+});
 
 function Header() {
     // const [userDropdownVisibilityClass,setUserDropdownVisibilityClass] = useState('hidden');
@@ -49,23 +49,23 @@ function Header() {
 
     // const handleClose = () => setShow(false);
     // const handleShow = () => setShow(true);
-const [modalState, setModalState] = useState("close")
+    const [modalState, setModalState] = useState("close")
 
-const handleShowModalOne = () => {
- setModalState("modal-one")
-}
+    const handleShowModalOne = () => {
+        setModalState("modal-one")
+    }
 
-const handleShowModalTwo = () => {
- setModalState("modal-two")
-}
+    const handleShowModalTwo = () => {
+        setModalState("modal-two")
+    }
 
-const handleClose = () => {
- setModalState("close")
-}
+    const handleClose = () => {
+        setModalState("close")
+    }
 
     return (
         <>
-            <Navbar bg="light" expand="lg" sticky="top">
+            <Navbar bg="white" expand="lg" sticky="top" style={{  boxShadow: "0px 8px 6px -7px #999" }}>
                 <Container fluid style={{ padding: "0px 125px 0px 5px" }}>
 
                     {/* <Router>
@@ -94,48 +94,48 @@ const handleClose = () => {
                         {/* {!user.username && ( */}
 
                         <Stack direction="horizontal" gap={1}>
-<>
-                            <Button variant="outline-primary" className="signBtn" onClick={handleShowModalOne}>
-                                Sign Up
-                            </Button>
-                            <Modal show={modalState === "modal-one"} onHide={handleClose}>
-                                <Modal.Header closeButton>
-                                    <Modal.Title>Sign Up</Modal.Title>
-                                </Modal.Header>
-                                <Modal.Body>
-                                    <ApolloProvider client={client}>
-                                    <Signup/>
-                                    </ApolloProvider>
+                            <>
+                                <Button variant="outline-primary" className="signBtn" onClick={handleShowModalOne}>
+                                    Sign Up
+                                </Button>
+                                <Modal show={modalState === "modal-one"} onHide={handleClose}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Sign Up</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <ApolloProvider client={client}>
+                                            <Signup />
+                                        </ApolloProvider>
                                     </Modal.Body>
-                                <Modal.Footer>
+                                    <Modal.Footer>
 
-                                    <Button variant="secondary" onClick={handleClose}>
-                                       Sign Up!
-                                    </Button>
-                                </Modal.Footer>
-                            </Modal>
+                                        <Button variant="secondary" onClick={handleClose}>
+                                            Sign Up!
+                                        </Button>
+                                    </Modal.Footer>
+                                </Modal>
                             </>
 
-<>
-                            <Button className="logBtn" onClick={handleShowModalTwo}>
-                                Log In
-                            </Button>
-                            <Modal show={modalState === "modal-two"} onHide={handleClose}>
-                                <Modal.Header closeButton>
-                                    <Modal.Title>Log In</Modal.Title>
-                                </Modal.Header>
-                                <Modal.Body>
-                                <ApolloProvider client={client}>
-                                    <Login/>
-                                    </ApolloProvider>
-                                </Modal.Body>
-                                <Modal.Footer>
+                            <>
+                                <Button className="logBtn" onClick={handleShowModalTwo}>
+                                    Log In
+                                </Button>
+                                <Modal show={modalState === "modal-two"} onHide={handleClose}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Log In</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <ApolloProvider client={client}>
+                                            <Login />
+                                        </ApolloProvider>
+                                    </Modal.Body>
+                                    <Modal.Footer>
 
-                                    <Button variant="secondary" onClick={handleClose}>
-                                        Log In
-                                    </Button>
-                                </Modal.Footer>
-                            </Modal>
+                                        <Button variant="secondary" onClick={handleClose}>
+                                            Log In
+                                        </Button>
+                                    </Modal.Footer>
+                                </Modal>
                             </>
                             <Dropdown>
                                 <Dropdown.Toggle
@@ -156,12 +156,9 @@ const handleClose = () => {
                                     <Dropdown.Item href="#/action-3">Log In</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
+                           
                         </Stack>
                     </Stack>
-
-
-                    {/* )} */}
-
                 </Container>
             </Navbar>
         </>
@@ -171,4 +168,3 @@ const handleClose = () => {
 export default Header;
 
 
- 

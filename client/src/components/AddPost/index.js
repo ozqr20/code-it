@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import BotBlack from "../../assets/images/bot-black.png";
 import { Image, Link, FileText } from 'react-bootstrap-icons';
 import Stack from 'react-bootstrap/Stack';
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const AddPost = (props) => {
     const navigate = useNavigate();
@@ -12,11 +14,13 @@ const AddPost = (props) => {
     
   return (
     <>
-    <div className="post row gx-5">
-      <div className="postWrapper">
-        <div className="postTop">
-          <img className="profileBot" src={BotBlack} alt="profile bot" />
-          <p className="p">
+    <Container className="post">
+      <Row className="">
+        <Col md="auto gy-3">
+        <Stack direction="horizontal" gap={4}>
+          <div className="botWrapper">
+        <img className="profileBot" src={BotBlack} alt="profile bot" />
+        </div>
           <input
           type="text"
           onClick={(e) => {
@@ -24,17 +28,16 @@ const AddPost = (props) => {
             }
         }
             placeholder="New Post"
-            className="postInput me-2"
-          /></p>
-          <Stack direction="horizontal" gap={4}>
-          <FileText className="postIcon"/>
-          <Image htmlColor="tomato" className="postIcon"/>
-          <Link htmlColor="blue" className="postIcon"/>
+            className="postInput"
+          />
+          <FileText  onClick={(e) => {
+              navigate("/form"); }} className="postIcon"/>
+          <Image className="postIcon"/>
+          <Link className="postIcon"/>
           </Stack>
-        </div>
-      </div>
-    </div>
-    
+        </Col>
+      </Row>
+    </Container>
     </>
   );
     };

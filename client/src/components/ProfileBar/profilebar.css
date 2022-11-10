@@ -1,0 +1,6 @@
+.profilebar {
+    height: 100%;
+    overflow-y: scroll;
+    position: sticky;
+    top: 50px;
+  }
