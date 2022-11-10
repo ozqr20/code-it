@@ -9,14 +9,22 @@ import {
     CalendarEvent,
     Mortarboard,
 } from 'react-bootstrap-icons';
+import {
+  
+  Container,
+  Row,
+} from 'react-bootstrap';
 // import { Users } from "../../dummyData";
 
 
 function Sidebar() {
   return (
-    <div className="sidebar">
-      <div className="sidebarWrapper">
-        <ul className="sidebarList">
+    
+    // <div className="sidebar">
+      <Container className="sideContainer">
+        <Row className="sideBar">
+          
+          <ul className="sidebarList">
           <li className="sidebarListItem">
             <Rss className="sidebarIcon" />
             <span className="sidebarListItemText">Feed</span>
@@ -57,8 +65,11 @@ function Sidebar() {
             <CloseFriend key={u.id} user={u} />
           ))}
         </ul> */}
-      </div>
-    </div>
+          
+        </Row>
+      </Container>
+    // </div>
+    
   );
 }
 

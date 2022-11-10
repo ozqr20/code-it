@@ -14,7 +14,7 @@ const AddPost = (props) => {
     
   return (
     <>
-    <Container className="post">
+    <Container fluid="md" className="post">
       <Row className="">
         <Col md="auto gy-3">
         <Stack direction="horizontal" gap={4}>
@@ -34,6 +34,7 @@ const AddPost = (props) => {
               navigate("/form"); }} className="postIcon"/>
           <Image className="postIcon"/>
           <Link className="postIcon"/>
+
           </Stack>
         </Col>
       </Row>
