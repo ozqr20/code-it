@@ -1,4 +1,5 @@
 import "../Feed/feed.css";
+import React from 'react';
 //import Auth from '../utils/auth';
 import AddPost from "../../components/AddPost";
 //import Posts from "../../components/Posts/index"

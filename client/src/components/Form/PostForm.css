@@ -1,11 +1,11 @@
-.wrapper {
+.wrapperPost {
     
     display: flex;
     align-items: flex-start;
     height: 500px;
     width: 100%;
     margin-top: 2%;
-    background-color: whitesmoke;
+    background-color: aliceblue;
     
 }
 
@@ -23,8 +23,27 @@
     margin: 1%;
 }
 
+.formInput {
+    padding-top: 55px;
+}
+
+.rules {
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
 .submit {
     width: 30%;
     height: 40px;
     margin: 2%;
+    border-radius: 40px;
+    border-color: #0275d8;
+    background-color: whitesmoke;
+    color: #0275d8;
+    float: right;
+}
+
+.submit:hover {
+    background-color: #0275d8;
+    color: whitesmoke
 }

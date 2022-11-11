@@ -60,8 +60,8 @@ const PostForm = (props) => {
 //   }
 
   return (
-    <Container className="wrapper">
-        <Col xs={7}>
+    <Container className="wrapperPost">
+        <Col xs={7} className="formInput">
 		<Form onSubmit={addPostHandler} >
             
 			<PostOpts formType={props.formType} onSetFormType={props.onSetFormType}/>
@@ -85,7 +85,7 @@ const PostForm = (props) => {
             
     </Form>
     </Col>
-    <Col xs lg="2"><Rules /></Col>
+    <Col md={{ span: 4, offset: 1 }} className="rules"><Rules /></Col>
     </Container>
   );
 }
