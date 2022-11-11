@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+    height: 60px;
+    justify-content: space-evenly;
+    margin: 0%;
+}
+
+.btn {
+    width: 33%;
+}

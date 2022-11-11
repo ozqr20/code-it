@@ -6,9 +6,6 @@ import Header from "../src/components/Header";
 import Home from "../src/pages/Home/Home";
 import CreatePost from "../src/pages/CreatePost/CreatePost";
 
-
-
-
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -41,7 +38,6 @@ function App() {
             path="/"
             element={<Home />}
           />
-         
           <Route
             path="/createpost"
             element={<CreatePost />}
