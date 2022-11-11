@@ -19,25 +19,24 @@ function ProfileBar() {
         // <div style={{ backgroundColor: '#eee' }}>
             <Container className="profileContainer">
                 <Row className="profileBar">
-                    
                         <Card style={{ borderRadius: '15px' }}>
                             <Card.Body className="text-center">
                                 <div className="mt-3 mb-4">
                                     <Card.Img src={ProfileBot}
-                                        className="rounded-circle" fluid style={{ width: '100px' }} />
+                                        className="rounded-circle" style={{ width: '100px' }} />
                                 </div>
                                 <Card.Title tag="h4">B Nel</Card.Title>
                                 <Card.Text className="text-muted mb-4">
                                     @Programmer <span className="mx-2">|</span> <a href="#!">github.com</a>
                                 </Card.Text>
                                 <div className="mb-4 pb-2">
-                                    <Button outline floating>
+                                    <Button>
                                         <Facebook />
                                     </Button>
-                                    <Button outline floating className="mx-1">
+                                    <Button className="mx-1">
                                         <Slack />
                                     </Button>
-                                    <Button outline floating>
+                                    <Button>
                                         <Github />
                                     </Button>
                                 </div>

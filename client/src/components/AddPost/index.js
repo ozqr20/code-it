@@ -24,14 +24,14 @@ const AddPost = (props) => {
           <input
           type="text"
           onClick={(e) => {
-              navigate("/form");
+              navigate("/createpost");
             }
         }
             placeholder="New Post"
             className="postInput"
           />
           <FileText  onClick={(e) => {
-              navigate("/form"); }} className="postIcon"/>
+              navigate("/createpost"); }} className="postIcon"/>
           <Image className="postIcon"/>
           <Link className="postIcon"/>
 
