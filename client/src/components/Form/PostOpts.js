@@ -16,13 +16,13 @@ const PostOpts = (props) => {
     }
   }
   return (
-    <div className="">
+    
         <Stack direction="horizontal" gap={4}>
-        <Button size="sm" name="TEXT" type="button" className="btn"  onClick={optionChangedHandler}>Post</Button>
-        <Button size="sm" name="IV" type="button" className="btn" onClick={optionChangedHandler}>Images / Video</Button>
-        <Button size="sm" name="LINK" type="button" className="btn"  onClick={optionChangedHandler}>Link</Button>
+        <Button variant="outline-primary" size="sm" name="TEXT" type="button" className="btn"  onClick={optionChangedHandler}>Post</Button>
+        <Button variant="outline-primary" size="sm" name="IV" type="button" className="btn" onClick={optionChangedHandler}>Images / Video</Button>
+        <Button variant="outline-primary" size="sm" name="LINK" type="button" className="btn"  onClick={optionChangedHandler}>Link</Button>
         </Stack>
-    </div>
+  
   );
 }
 

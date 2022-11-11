@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import {
-    
     Container,
     Row,
     Card,
-    Button
+    Button,
+    Stack
 } from 'react-bootstrap';
-import { Facebook, Slack, Github } from 'react-bootstrap-icons';
+import { Slack, Github, Linkedin } from 'react-bootstrap-icons';
 import ProfileBot from "../../assets/images/customer-support-bot.png"
 
 function ProfileBar() {
@@ -30,20 +30,22 @@ function ProfileBar() {
                                     @Programmer <span className="mx-2">|</span> <a href="#!">github.com</a>
                                 </Card.Text>
                                 <div className="mb-4 pb-2">
-                                    <Button>
-                                        <Facebook />
-                                    </Button>
-                                    <Button className="mx-1">
-                                        <Slack />
-                                    </Button>
+                                <Stack direction="horizontal" gap={3}>
                                     <Button>
                                         <Github />
                                     </Button>
+                                    <Button>
+                                        <Slack />
+                                    </Button>
+                                    <Button>
+                                        <Linkedin />
+                                    </Button>
+                                    </Stack>
                                 </div>
                                 <Button onClick={(e) => {
                                     navigate("/profile");
                                 }}
-                                    rounded size="lg">
+                                    rounded size="sm" variant="outline-primary">
                                     Edit Profile
                                 </Button>
                                 <div className="d-flex justify-content-between text-center mt-5 mb-2">
@@ -62,7 +64,6 @@ function ProfileBar() {
                                 </div>
                             </Card.Body>
                         </Card>
-                    
                 </Row>
                 <hr></hr>
             </Container>

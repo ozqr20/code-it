@@ -5,6 +5,7 @@ import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 import './PostForm.css';
 import PostOpts from './PostOpts';
 import { Form, Container, Col } from 'react-bootstrap';
+import Rules from './Rules';
 
 const PostForm = (props) => {
 
@@ -84,7 +85,7 @@ const PostForm = (props) => {
             
     </Form>
     </Col>
-    <Col xs lg="2">Rules</Col>
+    <Col xs lg="2"><Rules /></Col>
     </Container>
   );
 }

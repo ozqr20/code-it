@@ -3,8 +3,9 @@
     height: 60px;
     justify-content: space-evenly;
     margin: 0%;
+    background-color: transparent;
 }
 
 .btn {
-    width: 33%;
+    width: 32%;
 }
