@@ -9,6 +9,7 @@ import {
 } from 'react-bootstrap';
 import { Facebook, Slack, Github } from 'react-bootstrap-icons';
 import ProfileBot from "../../assets/images/customer-support-bot.png"
+import '../ProfileBar/profilebar.css'
 
 function ProfileBar() {
 
@@ -29,7 +30,7 @@ function ProfileBar() {
                                 <Card.Text className="text-muted mb-4">
                                     @Programmer <span className="mx-2">|</span> <a href="#!">github.com</a>
                                 </Card.Text>
-                                <div className="mb-4 pb-2">
+                                <div className="mb-4 pb-2 social">
                                     <Button>
                                         <Facebook />
                                     </Button>
