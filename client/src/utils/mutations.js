@@ -39,3 +39,18 @@ export const ADD_POST = gql`
     }
   }
 `;
+
+export const ADD_REPLY = gql`
+  mutation addReaction($commentId: ID!, $reactionBody: String!) {
+    addReaction(commentId: $commentId, reactionBody: $reactionBody) {
+      _id
+      reactionCount
+      reactions {
+        _id
+        reactionBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
