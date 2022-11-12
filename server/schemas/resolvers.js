@@ -37,7 +37,7 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
-            const token: signToken(user);
+            const token = signToken(user);
 
             return { token, user};
         },
@@ -72,11 +72,11 @@ const resolvers = {
       
             throw new AuthenticationError('You need to be logged in!');
           },
-          addReaction: async (parent, { commentId, reactionBody }, context) => {
+          addComment: async (parent, { commentId, commentBody }, context) => {
             if (context.user) {
               const updatedPost = await Post.findOneAndUpdate(
                 { _id: commentId },
-                { $push: { reactions: { reactionBody, username: context.user.username } } },
+                { $push: { comments: { commentBody, username: context.user.username } } },
                 { new: true, runValidators: true }
               );
       

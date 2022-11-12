@@ -5,22 +5,22 @@ const typeDefs = gql `
         _id: ID
         username: String
         email: String
-        posts: [posts]
+        posts: [Post]
     }
 
     type Post {
         _id: ID
-        enteredText
-        enteredTitle
+        enteredText: String
+        enteredTitle: String
         createdAt: String
         username: String
         commentCount: Int
-        reactions: [Reaction]
+       comments: [Comment]
     }
 
-    type Reaction {
+    type Comment {
         _id: ID
-        reactionBody
+        commentBody: String
         createdAt: String
         username: String
     }
@@ -35,13 +35,14 @@ const typeDefs = gql `
         users: [User]
         user(username: String!): User
         posts(username: String): [Post]
-        post(_id: ID!): Thought
+        post(_id: ID!): Post
     }
 
     type Mutation {
         login(email: String!, password: String!): Auth
+        addComment(postId: ID!, commentBody: String!): Post
         addUser(username: String!, email: String!, password: String!): Auth
-        addPost(enteredText: String!,enteredTitle: String!): Post
+        addPost(enteredText: String!, enteredTitle: String!): Post
     }
 `;
 
