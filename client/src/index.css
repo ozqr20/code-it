@@ -6,3 +6,7 @@
 .signBtn:hover {
   background: rgba(58, 133, 191, 0.75);
 }
+
+.logBtn:hover {
+  background: transparent;
+}

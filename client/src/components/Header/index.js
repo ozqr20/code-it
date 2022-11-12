@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Signup from '../SignUp';
@@ -14,12 +15,7 @@ import Modal from 'react-bootstrap/Modal';
 import {
     Person
 } from 'react-bootstrap-icons';
-//import Button from '../Button';
-//import {Link, Router} from "react-router-dom";
-// import ClickOutHandler from "react-clickout-handler";
-// import RedirectContext from "../RedirectContext";
-// import UserContext from "../UserContext";
-//import { Header } from 'react-bootstrap';
+import Auth from '../../utils/auth';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -41,14 +37,12 @@ const client = new ApolloClient({
 });
 
 function Header() {
-    // const [userDropdownVisibilityClass,setUserDropdownVisibilityClass] = useState('hidden');
+    const logout = event => {
+        event.preventDefault();
+        Auth.logout();
+    };
     const [searchText, setSearchText] = useState('');
-    // const { setRedirect } = useContext(RedirectContext);
 
-    // const [show, setShow] = useState(false);
-
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
     const [modalState, setModalState] = useState("close")
 
     const handleShowModalOne = () => {
@@ -65,21 +59,21 @@ function Header() {
 
     return (
         <>
-            <Navbar bg="white" expand="lg" sticky="top" style={{  boxShadow: "0px 8px 6px -7px #999" }}>
+            <Navbar bg="white" expand="lg" sticky="top" style={{ boxShadow: "0px 8px 6px -7px #999" }}>
                 <Container fluid style={{ padding: "0px 125px 0px 5px" }}>
 
-                    {/* <Router>
-                <Link to="/"> */}
-                    <Stack direction="horizontal" gap={1}>
-                        <Navbar.Brand href="#">
-                            <img src={Bot} alt="chatbot" className="chatBot" style={{ height: '60px' }} />
 
-                        </Navbar.Brand>
+
+                    <Stack direction="horizontal" gap={1}>
+                        <Link to="/">
+                            <Navbar.Brand href="#">
+                                <img src={Bot} alt="chatbot" className="chatBot" style={{ height: '60px' }} />
+                            </Navbar.Brand>
+                        </Link>
                         <Navbar.Brand className="codeIt" style={{ fontSize: "35px" }}>code-it</Navbar.Brand>
                     </Stack>
-                    {/* </Link>
-                </Router> */}
-                    <Stack direction="horizontal" gap={5}>
+
+                    <Stack direction="horizontal" gap={4}>
                         <Form className="d-flex">
                             <Form.Control
                                 style={{ width: "500px" }}
@@ -91,11 +85,18 @@ function Header() {
                             />
                         </Form>
 
-                        {/* {!user.username && ( */}
-
-                        <Stack direction="horizontal" gap={1}>
-                            <>
-                                <Button variant="outline-primary" className="signBtn" onClick={handleShowModalOne}>
+                        
+                            {Auth.loggedIn() ? (
+                                <>
+                                    <Link to="/profile">My Profile</Link>
+                                    <a href="/" onClick={logout}>
+                                        <Button variant="outline-primary" size="sm" className="signBtn">Logout</Button>
+                                    </a>
+                                </>
+                            ) : (
+                            
+                            <Stack direction="horizontal" gap={5}>
+                                <Button variant="outline-primary" size="sm" className="signBtn" onClick={handleShowModalOne}>
                                     Sign Up
                                 </Button>
                                 <Modal show={modalState === "modal-one"} onHide={handleClose}>
@@ -114,10 +115,10 @@ function Header() {
                                         </Button>
                                     </Modal.Footer>
                                 </Modal>
-                            </>
+                            
 
-                            <>
-                                <Button className="logBtn" onClick={handleShowModalTwo}>
+                            
+                                <Button variant="primary" className="logBtn" size="sm" onClick={handleShowModalTwo}>
                                     Log In
                                 </Button>
                                 <Modal show={modalState === "modal-two"} onHide={handleClose}>
@@ -136,7 +137,9 @@ function Header() {
                                         </Button>
                                     </Modal.Footer>
                                 </Modal>
-                            </>
+                                </Stack>
+                            )}
+                            
                             <Dropdown>
                                 <Dropdown.Toggle
                                     variant="text-dark"
@@ -156,8 +159,7 @@ function Header() {
                                     <Dropdown.Item href="#/action-3">Log In</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
-                           
-                        </Stack>
+                        
                     </Stack>
                 </Container>
             </Navbar>
@@ -166,5 +168,3 @@ function Header() {
 }
 
 export default Header;
-
-

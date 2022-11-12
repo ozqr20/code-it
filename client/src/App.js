@@ -6,9 +6,6 @@ import Header from "../src/components/Header";
 import Home from "../src/pages/Home/Home";
 import CreatePost from "../src/pages/CreatePost/CreatePost";
 
-
-
-
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -26,13 +23,12 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
-});
-
-
+}); 
 
 function App() {
 
   return (
+    
     <ApolloProvider client={client}>
       <Router>
         <Header />
@@ -41,7 +37,6 @@ function App() {
             path="/"
             element={<Home />}
           />
-         
           <Route
             path="/createpost"
             element={<CreatePost />}
@@ -57,6 +52,7 @@ function App() {
         </Routes>
       </Router>
     </ApolloProvider>
+    
   );
 }
 

@@ -23,3 +23,19 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_POST = gql`
+  mutation addPost($enteredText: String!, $enteredTitle: String!) {
+    addPost(enteredText: $enteredText, enteredTitle: $enteredTitle) {
+      _id
+      enteredText
+      enteredTitle
+      createdAt
+      username
+      commentCount
+      comments {
+        _id
+      }
+    }
+  }
+`;
