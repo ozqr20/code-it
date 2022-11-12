@@ -4,6 +4,9 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "../src/components/Header";
 import Home from "../src/pages/Home/Home";
+import CreatePost from "../src/pages/CreatePost/CreatePost";
+
+
 
 
 const httpLink = createHttpLink({
@@ -28,6 +31,7 @@ const client = new ApolloClient({
 
 
 function App() {
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -36,6 +40,11 @@ function App() {
           <Route
             path="/"
             element={<Home />}
+          />
+         
+          <Route
+            path="/createpost"
+            element={<CreatePost />}
           />
           {/* <Route path="/profile">
             <Route path=":username" element={<Profile />} />

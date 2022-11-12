@@ -1,4 +1,4 @@
-import "./addpost.css";
+import "./posts.css";
 
 
 
