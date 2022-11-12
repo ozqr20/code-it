@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    height: 60px;
+    justify-content: space-evenly;
+    margin: 0%;
+    background-color: transparent;
+}
+
+.btn {
+    width: 32%;
+}
+
+.formInput {
+    padding-top: 55px;
+    padding-left: 10px;
+}
