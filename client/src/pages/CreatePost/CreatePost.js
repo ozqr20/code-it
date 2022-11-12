@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dropdown } from 'react-bootstrap';
 import PostForm from '../../components/Form/PostForm';
+import './createpost.css'
 
 const CreatePost = (props) => {
   //const subredditList = ["r/Funny"]
@@ -12,9 +13,9 @@ const CreatePost = (props) => {
       
       {/* emp container, shud probs make it root... */}
       <div className="">
-          <div className="">
+          <div className="subcode">
               <h2>Create a post</h2>
-              <h2>Select SubCode-it:</h2>
+              <h3>Select SubCode-it:</h3>
               <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                   r/FunnyCode
