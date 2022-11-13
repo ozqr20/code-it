@@ -9,11 +9,11 @@ export const QUERY_POSTS = gql`
             createdAt
             username
             commentCount
-            reactions {
+            comments {
                 _id
                 createdAt
                 username
-                reactionBody
+                commentBody
             }
         }
     }
@@ -28,11 +28,11 @@ export const QUERY_REPLY = gql `
             createdAt
             username
             commentCount
-            reactions {
+            comments {
                 _id
                 createdAt
                 username
-                reactionBody
+                commentBody
             }
         }
     }
@@ -50,11 +50,11 @@ export const QUERY_ME = gql`
                 enteredTitle
                 createdAt
                 commentCount
-                reactions {
+                comments {
                     _id
                     createdAt
                     username
-                    reactionBody
+                    commentBody
                 }
             }
         }

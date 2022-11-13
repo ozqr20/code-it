@@ -38,7 +38,7 @@ const CreatePost = (props) => {
               <br/>
               </Col>
               </Row>
-              <PostForm submissionHandlers={props.submissionHandlers}/>
+              <PostForm />
       </Container>
     </Fragment>
   );
