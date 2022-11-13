@@ -87,7 +87,9 @@ const PostForm = (props) => {
             onClick={(e) => {
               navigate("/");
             }
-        } className="submit">Submit</button> 
+        } 
+        
+        className="submit">Submit</button> 
             
     </Form>
     </Col>
