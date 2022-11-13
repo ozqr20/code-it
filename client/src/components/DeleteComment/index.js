@@ -1,26 +1,27 @@
 import { useMutation } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
 import { DELETE_COMMENT } from "../../utils/mutations";
 import { QUERY_POSTS } from "../../utils/queries";
 
 
-function deleteCommentBtn ({ commentId }){
+function DeleteCommentBtn ({ commentId }){
     const navigate = useNavigate;
+    const { _id } = useParams();
 
     const [deleteComment] = useMutation(DELETE_COMMENT, {
-        variables: {id: commentId },
-        onCompleted: () => navigate('/'),
+        variables: {id: _id },
+        onCompleted: () => navigate('/Feed'),
         refetchQueries: [{ query: QUERY_POSTS }],
     });
 
     return (
-        <div className = 'd-flex mt-5 ms-auto'>
-            <button className="btn btn-danger m-2" onClick={deleteComment}>
-                <FaTrash className='icon' /> Delete comment
+        <div>
+            <button type="submit" className="btn btn-danger m-2">{deleteComment}
+                <FaTrash className='icon' />
             </button>
         </div>
     );
 }
 
-export default deleteCommentBtn;
+export default DeleteCommentBtn;
