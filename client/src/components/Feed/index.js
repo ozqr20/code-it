@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 //import Auth from '../utils/auth';
 import { Card, Button } from 'react-bootstrap'
 import AddPost from "../../components/AddPost";
+import DeletePost from "../../components/DeleteComment";
 //import Posts from "../../components/Posts/index"
 
 //dummy data?
