@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { useNavigate } from "react-router-dom";
+//import { Link } from 'react-router-dom';
 import { ADD_POST } from '../../utils/mutations';
 import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 import './PostForm.css';
@@ -9,16 +9,8 @@ import { Form, Container, Col } from 'react-bootstrap';
 import Rules from './Rules';
 
 const PostForm = (props) => {
-  const navigate = useNavigate();
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredText, setEnteredText] = useState('');
-
-  const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value)
-  }
-  const textChangeHandler = (event) => {
-    setEnteredText(event.target.value)
-  }
 
   const [addPost] = useMutation(ADD_POST, {
     update(cache, {data: { addPost }} ) {
@@ -55,11 +47,6 @@ const PostForm = (props) => {
     }
   };
 
-//   const addPostHandler = (event) => {
-//     event.preventDefault();
-//     props.submissionHandlers.onAddPost(enteredTitle, enteredText, author_id, author_username)
-//   }
-
   return (
     <Container className="wrapperPost">
         <Col xs={7} className="formInput">
@@ -72,7 +59,7 @@ const PostForm = (props) => {
 				placeholder="Title" 
 				className="title" 
 				value={enteredTitle}
-				onChange={titleChangeHandler}
+				onChange={(event) => setEnteredTitle(event.target.value)}
 			/>
 			<textarea
 				type="text" 
@@ -80,16 +67,11 @@ const PostForm = (props) => {
 				placeholder="Text (required)" 
 				className="textarea"
 				value={enteredText}
-				onChange={textChangeHandler}
+				onChange={(event) => setEnteredText(event.target.value)}
 			/>
-			<button 
-            type="submit"  
-            onClick={(e) => {
-              navigate("/");
-            }
-        } 
-        
-        className="submit">Submit</button> 
+			<button type="submit" className="submit">Submit
+      {/* <Link to="/">home</Link> */}
+        </button> 
             
     </Form>
     </Col>
