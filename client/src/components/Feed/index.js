@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 //import Auth from '../utils/auth';
 import { Card } from 'react-bootstrap'
 import AddPost from "../../components/AddPost";
-import DeleteComment from "../../components/DeleteComment";
+import DeletePost from "../../components/DeletePost";
 import { QUERY_POSTS } from "../../utils/queries";
 //import Posts from "../../components/Posts/index"
 
@@ -47,7 +47,7 @@ const Feed =({ posts })  => {
           {post.enteredText}
         </Card.Text>
         </Link>
-        <DeleteComment _id={data.posts._id} 
+        <DeletePost _id={data.posts._id} 
         />
       </Card.Body>
       <Card.Footer className="cardFooter">

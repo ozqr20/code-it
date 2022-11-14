@@ -55,9 +55,9 @@ export const ADD_REPLY = gql`
   }
 `;
 
-export const DELETE_COMMENT = gql `
-  mutation deleteComment($id: ID!){
-    deletecomment(id: $id){
+export const REMOVE_POST = gql `
+  mutation removePost($id: ID!){
+    removePost(id: $id){
       _id
       enteredText
       enteredTitle

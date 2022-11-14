@@ -38,7 +38,7 @@ const CreatePost = (props) => {
               <br/>
               </Col>
               </Row>
-              <PostForm />
+              <PostForm  />
       </Container>
     </Fragment>
   );
