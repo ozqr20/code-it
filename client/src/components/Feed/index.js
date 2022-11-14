@@ -1,15 +1,22 @@
 import "../Feed/feed.css";
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { Link, useParams } from "react-router-dom";
 //import Auth from '../utils/auth';
-import { Card, Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import AddPost from "../../components/AddPost";
+import DeletePost from "../../components/DeletePost";
+import { QUERY_POSTS } from "../../utils/queries";
 //import Posts from "../../components/Posts/index"
 
 //dummy data?
 //const loggedIn = Auth.loggedIn();
 
 const Feed =({ posts })  => {
+
+
+  const { _id } = useParams();
+  const { data } = useQuery(QUERY_POSTS, {variables: { _id }});
 
   return (
     
@@ -40,14 +47,13 @@ const Feed =({ posts })  => {
           {post.enteredText}
         </Card.Text>
         </Link>
-        
-        
-        <Button variant="primary">Go somewhere</Button>
+        <DeletePost _id={data.posts._id} 
+        />
       </Card.Body>
       <Card.Footer className="cardFooter">
         <div>Comments: {post.commentCount} || Click to{' '}
         {post.commentCount ? 'Add' : 'Start'} comments.</div>
-       <div> Posted {post.createdAt}</div></Card.Footer>
+       <div>{post.createdAt}</div></Card.Footer>
     </Card>
   
   ))

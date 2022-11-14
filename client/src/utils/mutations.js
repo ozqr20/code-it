@@ -54,3 +54,19 @@ export const ADD_REPLY = gql`
     }
   }
 `;
+
+export const REMOVE_POST = gql `
+  mutation removePost($id: ID!){
+    removePost(id: $id){
+      _id
+      enteredText
+      enteredTitle
+      createdAt
+      username
+      commentCount
+      comments {
+        _id
+      }
+    }
+  }
+`;
