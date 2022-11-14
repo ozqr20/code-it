@@ -63,7 +63,8 @@ const PostForm = (props) => {
   return (
     <Container className="wrapperPost">
         <Col xs={7} className="formInput">
-		<Form onSubmit={addPostHandler} >
+            <form onSubmit={addPostHandler}>
+		<Form  >
             
 			<PostOpts formType={props.formType} onSetFormType={props.onSetFormType}/>
 			<input 
@@ -92,6 +93,7 @@ const PostForm = (props) => {
         className="submit">Submit</button> 
             
     </Form>
+    </form>
     </Col>
     <Col md={{ span: 4, offset: 1 }} className="rules"><Rules /></Col>
     </Container>
