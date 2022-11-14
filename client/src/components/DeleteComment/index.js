@@ -11,7 +11,7 @@ function DeleteCommentBtn ({ commentId }){
 
     const [deleteComment] = useMutation(DELETE_COMMENT, {
         variables: {id: _id },
-        onCompleted: () => navigate('/Feed'),
+        onCompleted: () => navigate('/'),
         refetchQueries: [{ query: QUERY_POSTS }],
     });
 

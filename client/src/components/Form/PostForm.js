@@ -33,6 +33,15 @@ const PostForm = (props) => {
         });
     }
   });
+    // update state based on form input changes
+    const handleChange = (event) => {
+      if (event.target.value.length <= 280) {
+        setEnteredTitle(event.target.value);
+        setEnteredText(event.target.value.length);
+      }
+    };
+
+
 
   // submit form
   const addPostHandler = async (event) => {
@@ -42,6 +51,9 @@ const PostForm = (props) => {
         await addPost({
            variables: {enteredTitle, enteredText},
         });
+      // clear form value
+      setEnteredTitle('');
+      setEnteredText('');
     } catch (e) {
         console.error(e);
     }
@@ -69,10 +81,9 @@ const PostForm = (props) => {
 				value={enteredText}
 				onChange={(event) => setEnteredText(event.target.value)}
 			/>
-			<button type="submit" className="submit">Submit
-      {/* <Link to="/">home</Link> */}
-        </button> 
-            
+
+			<button type="submit" className="submit">Submit</button> 
+
     </Form>
     </Col>
     <Col md={{ span: 4, offset: 1 }} className="rules"><Rules /></Col>

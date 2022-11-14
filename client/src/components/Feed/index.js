@@ -47,8 +47,6 @@ const Feed =({ posts })  => {
           {post.enteredText}
         </Card.Text>
         </Link>
-        
-        
         <DeleteComment _id={data.posts._id} 
         />
       </Card.Body>
