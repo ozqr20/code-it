@@ -7,7 +7,7 @@ const IAForm = (props) => {
 
 	const [enteredTitle, setEnteredTitle] = useState('');
 	const [uploadedFile, setUploadedFile] = useState(null);
-	// const [image, setImage] = useState(null);
+	const [image, setImage] = useState(null);
 	const [show, setShow] = useState(false);
 	const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value)

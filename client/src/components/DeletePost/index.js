@@ -1,6 +1,7 @@
 import { useMutation } from '@apollo/client';
 import { useNavigate, useParams } from 'react-router-dom';
-import { FaTrash } from 'react-icons/fa';
+import { Trash } from 'react-bootstrap-icons';
+import { Button } from 'react-bootstrap'
 import { REMOVE_POST } from "../../utils/mutations";
 import { QUERY_POSTS } from "../../utils/queries";
 
@@ -16,11 +17,12 @@ function DeleteCommentBtn ({ postId }){
     });
 
     return (
-        <div>
-            <button type="submit" className="btn btn-danger m-2">{deletePost}
-                <FaTrash className='icon' />
-            </button>
-        </div>
+       
+            <Button type="submit" variant="danger" className="text-center">
+                <Trash/>{deletePost}
+                
+            </Button>
+     
     );
 }
 

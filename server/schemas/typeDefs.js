@@ -12,6 +12,7 @@ const typeDefs = gql `
         _id: ID
         enteredText: String
         enteredTitle: String
+       
         createdAt: String
         username: String
         commentCount: Int

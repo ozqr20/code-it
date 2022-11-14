@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Container, Dropdown, Row, Stack } from 'react-bootstrap';
-import PostForm from '../../components/Form/PostForm';
+import IAForm from '../../components/Form/IVForm';
 import './createpost.css'
 
 const CreatePost = (props) => {
@@ -38,7 +38,7 @@ const CreatePost = (props) => {
               <br/>
               </Col>
               </Row>
-              <PostForm  />
+              <IAForm  />
       </Container>
     </Fragment>
   );

@@ -88,7 +88,8 @@ function Header() {
                         
                             {Auth.loggedIn() ? (
                                 <>
-                                    <Link to="/profile">My Profile</Link>
+                                    <Link to="/profile">
+                                    <Button variant="outline-primary" size="sm" className="signBtn">My Profile</Button></Link>
                                     <a href="/" onClick={logout}>
                                         <Button variant="outline-primary" size="sm" className="signBtn">Logout</Button>
                                     </a>

@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-//import { Link } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { ADD_POST } from '../../utils/mutations';
 import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 import './PostForm.css';
@@ -11,6 +12,8 @@ import Rules from './Rules';
 const PostForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredText, setEnteredText] = useState('');
+//   const [enteredSub, setEnteredSub] = useState('Code');
+//   const navigate = useNavigate();
 
   const [addPost] = useMutation(ADD_POST, {
     update(cache, {data: { addPost }} ) {
@@ -33,11 +36,12 @@ const PostForm = (props) => {
         });
     }
   });
-    // update state based on form input changes
+    //update state based on form input changes
     const handleChange = (event) => {
       if (event.target.value.length <= 280) {
         setEnteredTitle(event.target.value);
         setEnteredText(event.target.value.length);
+        // setEnteredSub(event.target.value);
       }
     };
 
@@ -46,14 +50,12 @@ const PostForm = (props) => {
   // submit form
   const addPostHandler = async (event) => {
     event.preventDefault();
-    
+    // navigate('/', {replace: true})
     try {
         await addPost({
            variables: {enteredTitle, enteredText},
+           
         });
-      // clear form value
-      setEnteredTitle('');
-      setEnteredText('');
     } catch (e) {
         console.error(e);
     }
@@ -62,10 +64,11 @@ const PostForm = (props) => {
   return (
     <Container className="wrapperPost">
         <Col xs={7} className="formInput">
-            <form onSubmit={addPostHandler}>
-		<Form  >
+            
+		<Form onSubmit={addPostHandler} action="/">
             
 			<PostOpts formType={props.formType} onSetFormType={props.onSetFormType}/>
+            
 			<input 
 				type="text" 
 				id="title" 
@@ -82,11 +85,23 @@ const PostForm = (props) => {
 				value={enteredText}
 				onChange={(event) => setEnteredText(event.target.value)}
 			/>
-
+            {/* <input
+                type="text"
+                id="sub"
+                name="sub"
+                className="sub"
+                value={enteredSub}
+                onChange={(event) => setEnteredSub(event.target.value)}
+                /> */}
+                    {/* <option value="cute">Code</option>
+                    <option value="cute">CuteCode</option>
+                    <option value="funny">FunnyCode</option> */}
+                
+            {/* <Link to="/"> */}
 			<button type="submit" className="submit">Submit</button> 
-
+            {/* </Link> */}
     </Form>
-    </form>
+    
     </Col>
     <Col md={{ span: 4, offset: 1 }} className="rules"><Rules /></Col>
     </Container>

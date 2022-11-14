@@ -30,6 +30,7 @@ export const ADD_POST = gql`
       _id
       enteredText
       enteredTitle
+      
       createdAt
       username
       commentCount
@@ -61,6 +62,7 @@ export const REMOVE_POST = gql `
       _id
       enteredText
       enteredTitle
+     
       createdAt
       username
       commentCount
