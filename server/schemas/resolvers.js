@@ -72,17 +72,17 @@ const resolvers = {
       
             throw new AuthenticationError('You need to be logged in!');
           },
-          singleUpload: (parent, args) => {
-            return args.file.then(file => {
-              const {createReadStream, filename, mimetype} = file
+          // singleUpload: (parent, args) => {
+          //   return args.file.then(file => {
+          //     const {createReadStream, filename, mimetype} = file
       
-              const fileStream = createReadStream();
-              fileStream.pipe(fs.createWriteStream(`./uploadedFiles/${filename}`))
+          //     const fileStream = createReadStream();
+          //     fileStream.pipe(fs.createWriteStream(`./uploadedFiles/${filename}`))
       
-              return file;
-            });
-            throw new AuthenticationError('You need to be logged in');
-          },
+          //     return file;
+          //   });
+          //   throw new AuthenticationError('You need to be logged in');
+          // },
           removePost: async (parent,args,context) => {
             if(context.user){
               const updateUser = await User.findByIdAndUpdate(

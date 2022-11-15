@@ -1,5 +1,11 @@
 const { gql } = require('apollo-server-express');
 
+    // type File {
+    //     filename: String
+    //     mimetype: String
+    //     enconding: String
+    // }
+
 const typeDefs = gql `
     type User {
         _id: ID
@@ -17,13 +23,6 @@ const typeDefs = gql `
         username: String
         commentCount: Int
        comments: [Comment]
-    }
-
-    type File {
-        filename: String
-        mimetype: String
-        enconding: String
-
     }
 
     type Comment {
