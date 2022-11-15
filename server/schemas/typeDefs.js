@@ -19,6 +19,13 @@ const typeDefs = gql `
        comments: [Comment]
     }
 
+    type File {
+        filename: String
+        mimetype: String
+        enconding: String
+
+    }
+
     type Comment {
         _id: ID
         commentBody: String

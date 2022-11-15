@@ -24,6 +24,15 @@ export const ADD_USER = gql`
   }
 `;
 
+export const FILE_UPLOAD = gql`
+  mutation fileAdd($file: Upload!){
+    fileAdd(file: $file){
+      success
+    }
+  }
+
+`;
+
 export const ADD_POST = gql`
   mutation addPost($enteredText: String!, $enteredTitle: String!) {
     addPost(enteredText: $enteredText, enteredTitle: $enteredTitle) {
