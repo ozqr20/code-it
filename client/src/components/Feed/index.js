@@ -16,11 +16,6 @@ import Bot from '../../assets/images/bot.png'
 //const loggedIn = Auth.loggedIn();
 
 const Feed = ({ posts }) => {
-
-
-  const { _id } = useParams();
-  const { data } = useQuery(QUERY_POSTS, { variables: { _id } });
-
   return (
 
     <div className="feed container gx-12">
@@ -67,10 +62,10 @@ const Feed = ({ posts }) => {
                         <ThreeDots />
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1"><Stack direction="horizontal"> <DeletePost _id={data.posts._id} />Delete Post</Stack></Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Edit Post</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">See Profile</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">See SubCodeIt</Dropdown.Item>
+                        <Dropdown.Item href="#/action-1"><Stack direction="horizontal"> <DeletePost />DELETE</Stack></Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">EDIT</Dropdown.Item>
+                        <Dropdown.Item href="#/action-3">PROFILE</Dropdown.Item>
+                        <Dropdown.Item href="#/action-3">SUBCODEIT</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
 

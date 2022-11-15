@@ -32,9 +32,10 @@ const AddPost = (props) => {
           />
           <FileText  onClick={(e) => {
               navigate("/createpost"); }} className="postIcon"/>
-          <Image className="postIcon"/>
-          <Link className="postIcon"/>
-
+          <Image onClick={(e) => {
+              navigate("/createpost"); }} className="postIcon"/>
+          <Link onClick={(e) => {
+              navigate("/createpost"); }} className="postIcon"/>
           </Stack>
         </Col>
       </Row>
