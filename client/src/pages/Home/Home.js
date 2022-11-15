@@ -5,6 +5,8 @@ import ProfileBar from "../../components/ProfileBar/index"
 import { QUERY_POSTS } from "../../utils/queries";
 import { useQuery } from '@apollo/client';
 import "./home.css"
+import TopComCard from '../../components/TopComCard';
+import { Stack } from 'react-bootstrap';
 
  const Home = () => {
   const { data } = useQuery(QUERY_POSTS);
@@ -18,7 +20,10 @@ import "./home.css"
         <Feed
         posts={posts}
         />
+        <Stack direction="vertical">
         <ProfileBar />
+        <TopComCard/>
+        </Stack>
       </div>
     </>
   );

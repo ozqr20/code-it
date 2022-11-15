@@ -16,3 +16,18 @@
     font-size: 30px;
 
 }
+
+.comment {
+    width: 100px;
+}
+
+.card{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.hover:hover {
+    color: goldenrod;
+    cursor: pointer;
+}

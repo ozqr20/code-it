@@ -1,5 +1,8 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_ME, QUERY_USER } from '../../utils/queries';
+// import { Link, useParams } from "react-router-dom";
 import {
     Container,
     Row,
@@ -11,7 +14,18 @@ import { Slack, Github, Linkedin } from 'react-bootstrap-icons';
 import ProfileBot from "../../assets/images/customer-support-bot.png"
 import '../ProfileBar/profilebar.css'
 
+
+
+
 function ProfileBar() {
+
+
+    // const { username: userParam } = useParams();
+    // const user = data?.me || {};
+    // const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    //     variables: { username: userParam },
+    //   });
+    // var user = JSON.parse(localStorage.getItem('user'));
 
     const navigate = useNavigate();
 
@@ -68,7 +82,7 @@ function ProfileBar() {
                             </Card.Body>
                         </Card>
                 </Row>
-                <hr></hr>
+               
             </Container>
             
         // </div>

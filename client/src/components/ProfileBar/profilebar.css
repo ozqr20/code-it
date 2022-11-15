@@ -1,13 +1,13 @@
 .profileBar {
-    /* height: 100%; */
+    /* height: 30%; */
     width: fit-content;
     overflow-y: scroll;
     position: sticky;
-    top: 50px;
+    /* top: 50px; */
   }
 
 .profileContainerBar {
-    padding-top: 40px;
+    padding-top: 26px;
     padding-left: 30px;
    
 }

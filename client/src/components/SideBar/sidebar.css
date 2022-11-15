@@ -40,7 +40,8 @@
   }
 
   .sidebarListItem:hover {
-    color: goldenrod
+    color: goldenrod;
+    cursor: pointer;
   }
   
   .sidebarIcon {
