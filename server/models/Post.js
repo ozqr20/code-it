@@ -18,7 +18,7 @@ const postSchema = new Schema(
         },
         enteredSub: {
             type: String,
-            required: true
+            required: false
 
         },
 

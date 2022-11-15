@@ -6,7 +6,7 @@ import { REMOVE_POST } from "../../utils/mutations";
 import { QUERY_POSTS } from "../../utils/queries";
 
 
-function DeleteCommentBtn ({ postId }){
+function DeletePostBtn ({ postId }){
     const navigate = useNavigate;
     const { _id } = useParams();
 
@@ -16,14 +16,29 @@ function DeleteCommentBtn ({ postId }){
         refetchQueries: [{ query: QUERY_POSTS }],
     });
 
+     // remove handler
+    const removeHandler = async (event) => {
+    event.preventDefault();
+    try {
+        await deletePost({
+           variables: {_id},
+           
+        });
+    } catch (e) {
+        console.error(e);
+    }
+  };
+
     return (
        
-            <Button type="submit" variant="danger" className="text-center">
-                <Trash/>{deletePost}
-                
+            <Button onClick={() => {
+                removeHandler();
+                alert('clicked');
+              }}>
+                <Trash/>
             </Button>
      
     );
 }
 
-export default DeleteCommentBtn;
+export default DeletePostBtn;

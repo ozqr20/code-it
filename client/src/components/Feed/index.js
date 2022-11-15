@@ -16,11 +16,6 @@ import VoteBar from "../VoteBar";
 //const loggedIn = Auth.loggedIn();
 
 const Feed = ({ posts }) => {
-
-
-  const { _id } = useParams();
-  const { data } = useQuery(QUERY_POSTS, { variables: { _id } });
-
   return (
 
     <div className="feed container gx-12">
