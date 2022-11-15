@@ -73,7 +73,7 @@ const Profile = (props) => {
                             <Card.Body className="text-center">
                                 <div className="mt-3 mb-4">
                                     <Card.Img src={ProfileBot}
-                                        className="rounded-circle" style={{ width: '100px' }} />
+                                        className="rounded-circle" style={{ width: '100px', backgroundColor: 'chocolate' }} />
                                 </div>
                                 <Card.Title tag="h4">B Nel</Card.Title>
                                 <Card.Text className="text-muted mb-4">

@@ -8,6 +8,7 @@
 .sideContainer {
   padding-top: 30px;
   padding-left: 30px;
+  
 }
   
   ::-webkit-scrollbar {
@@ -28,6 +29,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    background-color: white;
   }
   
   .sidebarListItem {
