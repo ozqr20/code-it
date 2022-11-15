@@ -34,10 +34,10 @@ const Feed = ({ posts }) => {
               <Card.Header >
                 <Row>
                   <Col xs={1}>
-                  <div className="">
-                                    <Card.Img src={Bot}
-                                        className="rounded-circle" style={{ width: '50px' }} />
-                                </div>
+                    <div className="">
+                      <Card.Img src={Bot}
+                        className="rounded-circle" style={{ width: '50px' }} />
+                    </div>
                   </Col>
                   <Col>
                     c/codeIt
