@@ -3,13 +3,13 @@ import React from 'react';
 import { useQuery } from "@apollo/client";
 import { Link, useParams } from "react-router-dom";
 //import Auth from '../utils/auth';
-import { Card } from 'react-bootstrap'
 import AddPost from "../../components/AddPost";
 import DeletePost from "../../components/DeletePost";
 import { QUERY_POSTS } from "../../utils/queries";
-import { Stack, Col, Row, Dropdown } from 'react-bootstrap';
+import { Card, Stack, Col, Row, Dropdown, Container } from 'react-bootstrap';
 import { ThreeDots } from 'react-bootstrap-icons';
 import Bot from '../../assets/images/bot.png'
+import VoteBar from "../VoteBar";
 //import Posts from "../../components/Posts/index"
 
 
@@ -34,10 +34,22 @@ const Feed = ({ posts }) => {
 
         {posts &&
           posts.map(post => (
+            
+            
+              
+              
             <Card key={post._id} >
-
+              <Container>
+                <Row>
+                <Col xs={1} className="text-center">
+            
+            
+                  <VoteBar/>
+                  </Col>
+                  <Col>
               <Card.Header >
                 <Row>
+                  
                   <Col xs={1}>
                     <div className="">
                       <Card.Img src={Bot}
@@ -77,11 +89,11 @@ const Feed = ({ posts }) => {
                   </Col>
                 </Row>
               </Card.Header>
-              <Card.Title>{post.enteredTitle}</Card.Title>
+              <Card.Text className="titleCard">{post.enteredTitle}</Card.Text>
               <Card.Body>
 
 
-                <Card.Text>
+                <Card.Text className="textCard">
                   {post.enteredText}
                 </Card.Text>
 
@@ -89,15 +101,28 @@ const Feed = ({ posts }) => {
               </Card.Body>
 
               <Card.Footer className="cardFooter">
+                <Stack direction="horizontal" gap={8}>
+                  <Col>
                 <div>Comments: {post.commentCount} || Click to{' '}
                   {post.commentCount ? 'Add' : 'Start'} comments.</div>
-                <div>{post.createdAt}</div></Card.Footer>
+                  </Col>
+                  <Col className="text-end">
+                <div>{post.createdAt}</div>
+                </Col>
+                </Stack>
+                </Card.Footer>
+                </Col>
+                </Row>
+                </Container>
             </Card>
-
+            
+            
+            
           ))
         };
       </div>
     </div>
+    
   );
 }
 

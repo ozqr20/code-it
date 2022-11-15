@@ -6,3 +6,13 @@
     padding: 20px;
    
 }
+
+.titleCard {
+    font-weight: 500;
+    font-size: 45px;
+}
+
+.textCard {
+    font-size: 30px;
+
+}
