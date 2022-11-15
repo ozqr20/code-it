@@ -4,6 +4,7 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "../src/components/Header";
 import Home from "../src/pages/Home/Home";
+import Profile from "../src/pages/Profile/Profile"
 import CreatePost from "../src/pages/CreatePost/CreatePost";
 
 const httpLink = createHttpLink({
@@ -41,11 +42,11 @@ function App() {
             path="/createpost"
             element={<CreatePost />}
           />
-          {/* <Route path="/profile">
+          <Route path="/profile">
             <Route path=":username" element={<Profile />} />
             <Route path="" element={<Profile />} />
           </Route>
-          <Route
+          {/* <Route
             path="/post/:id"
             element={<SinglePost />}
           /> */}

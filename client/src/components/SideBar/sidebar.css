@@ -34,7 +34,11 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    color:green;
+    
+  }
+
+  .sidebarListItem:hover {
+    color: goldenrod
   }
   
   .sidebarIcon {

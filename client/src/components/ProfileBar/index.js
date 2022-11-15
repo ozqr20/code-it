@@ -18,9 +18,9 @@ function ProfileBar() {
     return (
 
         // <div style={{ backgroundColor: '#eee' }}>
-            <Container className="profileContainer">
+            <Container className="profileContainerBar">
                 <Row className="profileBar">
-                        <Card style={{ borderRadius: '15px' }}>
+                        <Card style={{ borderRadius: '25px',  border: '3px', borderStyle: 'solid' }}>
                             <Card.Body className="text-center">
                                 <div className="mt-3 mb-4">
                                     <Card.Img src={ProfileBot}
@@ -28,17 +28,17 @@ function ProfileBar() {
                                 </div>
                                 <Card.Title tag="h4">B Nel</Card.Title>
                                 <Card.Text className="text-muted mb-4">
-                                    @Programmer <span className="mx-2">|</span> <a href="#!">github.com</a>
+                                    @Programmer <span className="mx-2">|</span> <a href="https://github.com/">github.com</a>
                                 </Card.Text>
                                 <div className="mb-4 pb-2">
                                 <Stack direction="horizontal" gap={3}>
-                                    <Button>
+                                    <Button href="https://github.com/">
                                         <Github />
                                     </Button>
-                                    <Button>
+                                    <Button href="https://slack.com/workspace-signin">
                                         <Slack />
                                     </Button>
-                                    <Button>
+                                    <Button href="https://www.linkedin.com/">
                                         <Linkedin />
                                     </Button>
                                     </Stack>

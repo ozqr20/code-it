@@ -1,14 +1,15 @@
 .profileBar {
-    height: 100%;
+    /* height: 100%; */
     width: fit-content;
     overflow-y: scroll;
     position: sticky;
     top: 50px;
   }
 
-.profileContainer {
+.profileContainerBar {
     padding-top: 40px;
     padding-left: 30px;
+   
 }
 
 .social Button:hover{

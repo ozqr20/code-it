@@ -1,3 +1,4 @@
+import React from 'react';
 import Sidebar from "../../components/SideBar/index";
 import Feed from "../../components/Feed/index";
 import ProfileBar from "../../components/ProfileBar/index"
@@ -7,7 +8,7 @@ import "./home.css"
 
  const Home = () => {
   const { data } = useQuery(QUERY_POSTS);
-  //const { data: userData } = useQuery(QUERY_ME);
+  // const { data: userData } = useQuery(QUERY_ME);
   const posts = data?.posts || [];
   return (
     <>
