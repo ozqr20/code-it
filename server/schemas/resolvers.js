@@ -72,6 +72,21 @@ const resolvers = {
       
             throw new AuthenticationError('You need to be logged in!');
           },
+          addReactPost: async (parent, args, context) => {
+            if (context.user) {
+              const reactpost = await ReactPost.create({ ...args, username: context.user.username });
+      
+              await User.findByIdAndUpdate(
+                { _id: context.user._id },
+                { $push: { reactposts: reactpost._id } },
+                { new: true }
+              );
+      
+              return reactpost;
+            }
+      
+            throw new AuthenticationError('You need to be logged in!');
+          },
           // singleUpload: (parent, args) => {
           //   return args.file.then(file => {
           //     const {createReadStream, filename, mimetype} = file
@@ -103,6 +118,19 @@ const resolvers = {
               );
       
               return updatedPost;
+            }
+      
+            throw new AuthenticationError('You need to be logged in!');
+          },
+          addReactComment: async (parent, { reactcommentId, reactcommentBody }, context) => {
+            if (context.user) {
+              const updatedReactPost = await ReactPost.findOneAndUpdate(
+                { _id: reactcommentId },
+                { $push: { reactcomments: { reactcommentBody, username: context.user.username } } },
+                { new: true, runValidators: true }
+              );
+      
+              return updatedReactPost;
             }
       
             throw new AuthenticationError('You need to be logged in!');

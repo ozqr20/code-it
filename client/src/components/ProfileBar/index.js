@@ -43,9 +43,9 @@ function ProfileBar() {
                                 </div>
                                
                                 <Card.Title tag="h4">B Nel</Card.Title>
-                                <Card.Text className="text-muted mb-4">
+                                {/* <Card.Text className="text-muted mb-4">
                                     @Programmer <span className="mx-2">|</span> <a href="https://github.com/">github.com</a>
-                                </Card.Text>
+                                </Card.Text> */}
                                 <div className="mb-4 pb-2">
                                 <Stack direction="horizontal" gap={3}>
                                     <Button href="https://github.com/">
@@ -59,13 +59,13 @@ function ProfileBar() {
                                     </Button>
                                     </Stack>
                                 </div>
-                                <Button onClick={(e) => {
+                                <Button style={{ width: "200px", borderRadius: "20px" }} onClick={(e) => {
                                     navigate("/profile");
                                 }}
                                     rounded size="sm" variant="outline-primary">
                                     Edit Profile
                                 </Button>
-                                <div className="d-flex justify-content-between text-center mt-5 mb-2">
+                                {/* <div className="d-flex justify-content-between text-center mt-5 mb-2">
                                     <div>
                                         <Card.Text className="mb-1 h5">8,211</Card.Text>
                                         <Card.Text className="small text-muted mb-0">Up Votes</Card.Text>
@@ -78,7 +78,7 @@ function ProfileBar() {
                                         <Card.Text className="mb-1 h5">2,456</Card.Text>
                                         <Card.Text className="small text-muted mb-0">Posts</Card.Text>
                                     </div>
-                                </div>
+                                </div> */}
                             </Card.Body>
                         </Card>
                 </Row>

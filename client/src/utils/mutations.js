@@ -49,14 +49,45 @@ export const ADD_POST = gql`
   }
 `;
 
+export const ADD_REACT_POST = gql`
+  mutation addReactPost($enteredText: String!, $enteredTitle: String!) {
+    addReactPost(enteredText: $enteredText, enteredTitle: $enteredTitle) {
+      _id
+      enteredText
+      enteredTitle
+      createdAt
+      username
+      reactcommentCount
+      reactcomments {
+        _id
+      }
+    }
+  }
+`;
+
 export const ADD_COMMENT = gql`
   mutation addComment($commentId: ID!, $commentBody: String!) {
-    addcomment(commentId: $commentId, commentBody: $commentBody) {
+    addComment(commentId: $commentId, commentBody: $commentBody) {
       _id
       commentCount
       comments {
         _id
         commentBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
+
+export const ADD_REACT_COMMENT = gql`
+  mutation addReactComment($reactcommentId: ID!, $reactcommentBody: String!) {
+    addReactComment(reactcommentId: $reactcommentId, reactcommentBody: $reactcommentBody) {
+      _id
+      reactcommentCount
+      reactcomments {
+        _id
+        reactcommentBody
         createdAt
         username
       }

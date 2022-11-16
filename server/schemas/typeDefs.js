@@ -12,6 +12,7 @@ const typeDefs = gql `
         username: String
         email: String
         posts: [Post]
+        reactposts: [ReactPost]
     }
 
     type Post {
@@ -23,6 +24,16 @@ const typeDefs = gql `
         username: String
         commentCount: Int
        comments: [Comment]
+    }
+
+    type ReactPost {
+        _id: ID
+        enteredText: String
+        enteredTitle: String
+        createdAt: String
+        username: String
+        reactcommentCount: Int
+       reactcomments: [Comment]
     }
 
     type Comment {
@@ -42,14 +53,18 @@ const typeDefs = gql `
         users: [User]
         user(username: String!): User
         posts(username: String): [Post]
+        reactposts(username: String!): [ReactPost]
         post(_id: ID!): Post
+        reactpost(_id: ID!): ReactPost
     }
 
     type Mutation {
         login(email: String!, password: String!): Auth
         addComment(postId: ID!, commentBody: String!): Post
+        addReactComment(reactpostId: ID!, reactcommentBody: String!): ReactPost
         addUser(username: String!, email: String!, password: String!): Auth
         addPost(enteredText: String!, enteredTitle: String!): Post
+        addReactPost(enteredText: String!, enteredTitle: String!): ReactPost
         removePost(postId: ID!): User
     }
 `;

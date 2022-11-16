@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
-import { ADD_POST } from '../../utils/mutations';
-import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
-import './PostForm.css';
-import PostOpts from '../../../components/Form/IVForm';
+import { ADD_REACT_POST } from '../../utils/mutations';
+import { QUERY_REACT_POSTS, QUERY_ME } from '../../utils/queries';
+import './reactform.css';
+import PostOpts from '../../../components/Form/PostOpts';
 import { Form, Container, Col } from 'react-bootstrap';
 import Rules from '../../../components/Form/Rules';
 
@@ -15,24 +15,24 @@ const ReactForm = (props) => {
 //   const [enteredSub, setEnteredSub] = useState('Code');
   const navigate = useNavigate();
 
-  const [addPost] = useMutation(ADD_POST, {
-    update(cache, {data: { addPost }} ) {
+  const [addReactPost] = useMutation(ADD_REACT_POST, {
+    update(cache, {data: { addReactPost }} ) {
         
         try { 
             const { me } = cache.readQuery({ query: QUERY_ME });
             cache.writeQuery({
                 query: QUERY_ME,
-                data: { me: { ...me, posts: [...me.posts, addPost]}},
+                data: { me: { ...me, reactposts: [...me.reactposts, addReactPost]}},
             });
         } catch (e) {
             console.log('post added!')
         }
 
         //update post array cache
-        const { posts } = cache.readQuery({ query: QUERY_POSTS });
+        const { reactposts } = cache.readQuery({ query: QUERY_REACT_POSTS });
         cache.writeQuery({
-            query: QUERY_POSTS,
-            data: { posts: [addPost, ...posts] },
+            query: QUERY_REACT_POSTS,
+            data: { reactposts: [addPost, ...reactposts] },
         });
     }
   });
@@ -52,11 +52,11 @@ const ReactForm = (props) => {
     event.preventDefault();
     // navigate('/', {replace: true})
     try {
-        await addPost({
+        await addReactPost({
            variables: {enteredTitle, enteredText},
            
         });
-        navigate("/")
+        navigate("/react")
     } catch (e) {
         console.error(e);
     }
@@ -66,7 +66,7 @@ const ReactForm = (props) => {
     <Container className="wrapperPost">
         <Col xs={7} className="formInput">
             
-		<Form onSubmit={addPostHandler} action="/">
+		<Form onSubmit={addPostHandler} action="/react">
             
 			<PostOpts formType={props.formType} onSetFormType={props.onSetFormType}/>
             
@@ -98,9 +98,9 @@ const ReactForm = (props) => {
                     <option value="cute">CuteCode</option>
                     <option value="funny">FunnyCode</option> */}
                 
-            {/* <Link to="/"> */}
+            
 			<button type="submit" className="submit">Submit</button> 
-            {/* </Link> */}
+          
     </Form>
     
     </Col>

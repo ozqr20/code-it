@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import '../Header/header.css'
+import './reactheader.css'
 import { Link } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { useNavigate } from 'react-router-dom';
-import Signup from '../SignUp';
-import Login from '../LogIn';
-import Bot from "../../assets/images/bot.png"
+import Signup from '../../../SignUp';
+import Login from '../../../LogIn';
+import Bot from "../../../../assets/images/bot.png"
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack'
@@ -15,10 +14,10 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {
-    HouseDoorFill,
+    Flower3,
     Person
 } from 'react-bootstrap-icons';
-import Auth from '../../utils/auth';
+import Auth from '../../../../utils/auth';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -48,8 +47,6 @@ function Header() {
 
     const [modalState, setModalState] = useState("close")
 
-    const navigate = useNavigate();
-
     const handleShowModalOne = () => {
         setModalState("modal-one")
     }
@@ -64,7 +61,7 @@ function Header() {
 
     return (
         <>
-            <Navbar bg="white" expand="lg" sticky="top" style={{ boxShadow: "0px 8px 6px -7px #999" }}>
+            <Navbar expand="lg" sticky="top" style={{ boxShadow: "0px 8px 6px -7px #999", backgroundColor: "#61DBFB" }}>
                 <Container fluid style={{ padding: "0px 125px 0px 5px" }}>
 
 
@@ -76,10 +73,9 @@ function Header() {
                             </Navbar.Brand>
                         </Link>
                         <Navbar.Brand className="codeIt" style={{ fontSize: "35px" }}>code-it</Navbar.Brand>
-                        
-                        
+                        <button className='houseBtn text-start'>
+                        <Flower3 />
                         <Dropdown>
-                       
                                 <Dropdown.Toggle
                                     variant="text-dark"
                                     id="dropdown-basic"
@@ -87,21 +83,17 @@ function Header() {
                                     bsPrefix
                                     className="houseDrop"
                                 >
-                                      <button className='houseBtn text-start'><HouseDoorFill /></button>
+                                    
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item onClick={(e) => {
-                                    navigate("/");
-                                }} >Home</Dropdown.Item>
-                                    <Dropdown.Item onClick={(e) => {
-                                    navigate("/react");
-                                }} activeClassName="active-nav-link">c/React</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-1">Home</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">c/React</Dropdown.Item>
                                     <Dropdown.Item href="#/action-3">c/FunnyCode</Dropdown.Item>
                                     <Dropdown.Item href="#/action-3">Add A Community</Dropdown.Item>
                                    
                                 </Dropdown.Menu>
                             </Dropdown>
-                            
+                            </button>
                     </Stack>
 
                     <Stack direction="horizontal" gap={4}>
@@ -188,6 +180,7 @@ function Header() {
                                     <Person />
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">Dark Mode</Dropdown.Item>
                                     <Dropdown.Item href="#/action-2">Help Center</Dropdown.Item>
                                     <Dropdown.Item href="#/action-3">Terms & Policies</Dropdown.Item>
                                     <Dropdown.Item href="#/action-3">Advertise on Codeit</Dropdown.Item>

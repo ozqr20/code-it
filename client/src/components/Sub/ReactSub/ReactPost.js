@@ -1,7 +1,7 @@
 import "./reactpost.css";
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import BotBlack from "../../assets/images/bot-black.png";
+import BotLtBlue from "../../../assets/images/bot-lightBlue.png";
 import { Image, Link, FileText } from 'react-bootstrap-icons';
 import Stack from 'react-bootstrap/Stack';
 import Container from 'react-bootstrap/Container';
@@ -19,7 +19,7 @@ const ReactPost = (props) => {
         <Col md="auto gy-3">
         <Stack direction="horizontal" gap={4}>
           <div className="botWrapper">
-        <img className="profileBot" src={BotBlack} alt="profile bot" />
+        <img className="profileBot" src={BotLtBlue} alt="profile bot" />
         </div>
           <input
           type="text"

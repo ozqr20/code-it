@@ -117,8 +117,9 @@ const Profile = (props) => {
                         </Col>
                         <Col>
                         < Feed
+                        title={`${user.username}'s feed`}
                         posts={user.posts}
-                        title={`${user.username}'s feed`}/>
+                        />
                         </Col>
                 </Row>
                 <hr></hr>

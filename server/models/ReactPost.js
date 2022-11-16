@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comment');
+const reactcommentSchema = require('./ReactComment');
 const dateFormat = require('../utils/dateFormat');
 
-const postSchema = new Schema(
+const reactpostSchema = new Schema(
     {
         enteredText: {
             type: String,
@@ -25,7 +25,7 @@ const postSchema = new Schema(
             type: String,
             required: true
         },
-        comments: [commentSchema]
+        reactcomments: [reactcommentSchema]
     },
     {
         toJSON: {
@@ -34,11 +34,11 @@ const postSchema = new Schema(
     }
 );
 
-postSchema.virtual('commentCount').get(function () {
-    return this.comment.length;
+reactpostSchema.virtual('reactcommentCount').get(function () {
+    return this.reactcomment.length;
     
 });
 
-const Post = model('Post', postSchema);
+const ReactPost = model('ReactPost', reactpostSchema);
 
-module.exports = Post;
+module.exports = ReactPost;

@@ -129,7 +129,7 @@ const Feed = ({ posts }) => {
               </Container>
             </Card>
           ))
-        };
+        }
       </div>
     </div>
 

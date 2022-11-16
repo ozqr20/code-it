@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Space from '../../../../assets/images/space-back.jpg';
+import ReactBG1 from '../../../../assets/images/reactBG1.webp';
 import { useNavigate } from "react-router-dom";
 import { Col, Dropdown, Row, Stack } from "react-bootstrap";
 import "../ReactComCard/reactcomcard.css"
@@ -10,9 +10,9 @@ function ReactComCard() {
     const navigate = useNavigate();
     return (
         <Card style={{ width: '17rem', paddingTop: "1px", paddingBottom: "1px" }}>
-            <Card.Img style={{ height: '20%', opacity: '88%' }} src={Space} />
+            <Card.Img style={{ height: '35%', opacity: '88%' }} src={ReactBG1} />
             <Card.ImgOverlay>
-                <div className='text-center' style={{ padding: "30px", fontWeight: 900, fontSize: "110%", color: "whitesmoke" }}>React CodeIt Community</div>
+                <div className='text-center' style={{ padding: "30px", fontWeight: 950, fontSize: "130%", color: "whitesmoke" }}>React CodeIt Community</div>
             </Card.ImgOverlay>
             <Card.Body>React News and Highlights from everything React.JS from developers around the world.</Card.Body>
 
