@@ -31,9 +31,9 @@ function DeletePostBtn ({ postId }){
 
     return (
        
-            <Button onClick={() => {
+            <Button variant="danger" onClick={() => {
                 removeHandler();
-                alert('clicked');
+                alert('DELETE!');
               }}>
                 <Trash/>
             </Button>

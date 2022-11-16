@@ -1,11 +1,9 @@
 import React from 'react';
-import Sidebar from "../../components/SideBar/index";
 import ReactFeed from "../../components/Sub/ReactSub/ReactFeed";
 import { QUERY_REACT_POSTS } from "../../utils/queries";
 import { useQuery } from '@apollo/client';
 import "./reacthome.css"
 import ReactComCard from '../../components/Sub/ReactSub/ReactComCard/index';
-import ReactHeader from '../../components/Sub/ReactSub/ReactHeader/index'
 import { Stack, Col } from 'react-bootstrap';
 
  const ReactHome = () => {

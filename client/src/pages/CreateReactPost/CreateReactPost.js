@@ -10,7 +10,7 @@ const CreateReactPost = (props) => {
     <Fragment>
       <br/>
       <br/>
-      <Container className="postWrapper">
+      <Container className="reactWrapper">
         <Row>
             <Col>
             <Stack direction='horizontal'>

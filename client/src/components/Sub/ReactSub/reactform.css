@@ -1,29 +1,29 @@
-.wrapperPost {
+.wrapperReact {
     
     display: flex;
     align-items: flex-start;
-    height: 500px;
+    height: 550px;
     width: 100%;
     margin-top: 2%;
-    background-color: aliceblue;
+    background-color: #61DBFB;
     
 }
 
-.title {
+.titleReact {
     width: 98%;
     height: 60px;
     font-size: 1.5rem;
     margin: 1%;
 }
 
-.textarea {
+.textareaReact {
     width: 98%;
     height: 200px;
     font-size: 1.2rem;
     margin: 1%;
 }
 
-.formInput {
+.formReact {
     padding-top: 55px;
 }
 
@@ -32,18 +32,18 @@
     padding-left: 10px;
 }
 
-.submit {
+.submitReact {
     width: 30%;
     height: 40px;
     margin: 2%;
     border-radius: 40px;
-    border-color: #0275d8;
-    background-color: whitesmoke;
-    color: #0275d8;
+    border-color: orangered;
+    background-color: orangered;
+    color: white;
     float: right;
 }
 
-.submit:hover {
+.submitReact:hover {
     background-color: #0275d8;
     color: whitesmoke
 }

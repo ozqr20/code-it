@@ -98,11 +98,11 @@ const resolvers = {
           //   });
           //   throw new AuthenticationError('You need to be logged in');
           // },
-          removePost: async (parent,args,context) => {
+          removePost: async (parent, { postId }, context) => {
             if(context.user){
               const updateUser = await User.findByIdAndUpdate(
                 { _id: context.user._id},
-                { $pull: { posts: {postId: args.postId}}},
+                { $pull: { posts: {postId: postId}}},
                 { new: true }
               );
               return updateUser;

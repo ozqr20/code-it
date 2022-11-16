@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
-import { ADD_REACT_POST } from '../../utils/mutations';
-import { QUERY_REACT_POSTS, QUERY_ME } from '../../utils/queries';
+import { ADD_REACT_POST } from '../../../utils/mutations';
+import { QUERY_REACT_POSTS, QUERY_ME } from '../../../utils/queries';
 import './reactform.css';
 import PostOpts from '../../../components/Form/PostOpts';
 import { Form, Container, Col } from 'react-bootstrap';
@@ -32,7 +32,7 @@ const ReactForm = (props) => {
         const { reactposts } = cache.readQuery({ query: QUERY_REACT_POSTS });
         cache.writeQuery({
             query: QUERY_REACT_POSTS,
-            data: { reactposts: [addPost, ...reactposts] },
+            data: { reactposts: [addReactPost, ...reactposts] },
         });
     }
   });
@@ -48,9 +48,9 @@ const ReactForm = (props) => {
 
 
   // submit form
-  const addPostHandler = async (event) => {
+  const addReactPostHandler = async (event) => {
     event.preventDefault();
-    // navigate('/', {replace: true})
+   
     try {
         await addReactPost({
            variables: {enteredTitle, enteredText},
@@ -63,10 +63,10 @@ const ReactForm = (props) => {
   };
 
   return (
-    <Container className="wrapperPost">
-        <Col xs={7} className="formInput">
+    <Container className="wrapperReact">
+        <Col xs={7} className="formReact">
             
-		<Form onSubmit={addPostHandler} action="/react">
+		<Form onSubmit={addReactPostHandler} action="/react">
             
 			<PostOpts formType={props.formType} onSetFormType={props.onSetFormType}/>
             
@@ -74,7 +74,7 @@ const ReactForm = (props) => {
 				type="text" 
 				id="title" 
 				placeholder="Title" 
-				className="title" 
+				className="titleReact" 
 				value={enteredTitle}
 				onChange={(event) => setEnteredTitle(event.target.value)}
 			/>
@@ -82,7 +82,7 @@ const ReactForm = (props) => {
 				type="text" 
 				id="text" 
 				placeholder="Text (required)" 
-				className="textarea"
+				className="textareaReact"
 				value={enteredText}
 				onChange={(event) => setEnteredText(event.target.value)}
 			/>
@@ -99,7 +99,7 @@ const ReactForm = (props) => {
                     <option value="funny">FunnyCode</option> */}
                 
             
-			<button type="submit" className="submit">Submit</button> 
+			<button type="submit" className="submitReact">Submit</button> 
           
     </Form>
     

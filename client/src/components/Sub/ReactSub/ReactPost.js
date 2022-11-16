@@ -24,18 +24,18 @@ const ReactPost = (props) => {
           <input
           type="text"
           onClick={(e) => {
-              navigate("/createpost");
+              navigate("/createreactpost");
             }
         }
             placeholder="New Post"
             className="postInput"
           />
           <FileText  onClick={(e) => {
-              navigate("/createpost"); }} className="postIcon"/>
+              navigate("/createreactpost"); }} className="postIcon"/>
           <Image onClick={(e) => {
-              navigate("/createpost"); }} className="postIcon"/>
+              navigate("/createreactpost"); }} className="postIcon"/>
           <Link onClick={(e) => {
-              navigate("/createpost"); }} className="postIcon"/>
+              navigate("/createreactpost"); }} className="postIcon"/>
           </Stack>
         </Col>
       </Row>
