@@ -45,3 +45,10 @@
     border-color: #0d6efd;
     cursor: pointer;
   }
+
+  .houseBtn {
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+    background-color: whitesmoke;
+  }

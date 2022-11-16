@@ -14,6 +14,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {
+    HouseDoorFill,
     Person
 } from 'react-bootstrap-icons';
 import Auth from '../../utils/auth';
@@ -72,6 +73,27 @@ function Header() {
                             </Navbar.Brand>
                         </Link>
                         <Navbar.Brand className="codeIt" style={{ fontSize: "35px" }}>code-it</Navbar.Brand>
+                        <button className='houseBtn text-start'>
+                        <HouseDoorFill />
+                        <Dropdown>
+                                <Dropdown.Toggle
+                                    variant="text-dark"
+                                    id="dropdown-basic"
+                                    size="lg"
+                                    bsPrefix
+                                    className="houseDrop"
+                                >
+                                    
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">Home</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">c/React</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">c/FunnyCode</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Add A Community</Dropdown.Item>
+                                   
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            </button>
                     </Stack>
 
                     <Stack direction="horizontal" gap={4}>

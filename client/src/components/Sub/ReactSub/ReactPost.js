@@ -1,4 +1,4 @@
-import "../AddPost/addpost.css";
+import "./reactpost.css";
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import BotBlack from "../../assets/images/bot-black.png";
@@ -8,13 +8,13 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const AddPost = (props) => {
+const ReactPost = (props) => {
     const navigate = useNavigate();
     
     
   return (
     <>
-    <Container fluid="md" className="post">
+    <Container fluid="md" className="postReact">
       <Row className="">
         <Col md="auto gy-3">
         <Stack direction="horizontal" gap={4}>
@@ -45,4 +45,4 @@ const AddPost = (props) => {
     };
 
 
-export default AddPost;
+export default ReactPost;

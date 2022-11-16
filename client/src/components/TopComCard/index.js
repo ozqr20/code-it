@@ -21,7 +21,7 @@ function TopComCard() {
                     <Col className="text-end">
                     <button 
                     className="join"
-                    onClick={(e) => {navigate("/profile");}}
+                    onClick={(e) => {navigate("/react");}}
                     >Join</button>
                 </Col>
                 </Row>
