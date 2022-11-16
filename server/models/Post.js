@@ -16,12 +16,6 @@ const postSchema = new Schema(
             minLength: 1,
             maxLength: 40
         },
-        enteredSub: {
-            type: String,
-            required: false
-
-        },
-
         createdAt: {
             type: Date,
             default: Date.now,

@@ -20,13 +20,12 @@ export const QUERY_POSTS = gql`
     }
 `;
 
-export const QUERY_REPLY = gql `
-    query reply($id: ID!) {
-        reply(_id: $id) {
+export const QUERY_POST = gql `
+    query post($id: ID!) {
+        post(_id: $id) {
             _id
             enteredText
             enteredTitle
-           
             createdAt
             username
             commentCount
