@@ -6,7 +6,6 @@ export const QUERY_POSTS = gql`
             _id
             enteredText
             enteredTitle
-            
             createdAt
             username
             commentCount
@@ -20,13 +19,31 @@ export const QUERY_POSTS = gql`
     }
 `;
 
-export const QUERY_REPLY = gql `
+export const QUERY_POST = gql`
+  query post($id: ID!) {
+    post(_id: $id) {
+      _id
+      enteredText
+      enteredTitle
+      createdAt
+      username
+      commentCount
+      comments {
+        _id
+        createdAt
+        username
+        commentBody
+      }
+    }
+  }
+`;
+
+export const QUERY_COMMENT = gql `
     query reply($id: ID!) {
         reply(_id: $id) {
             _id
             enteredText
             enteredTitle
-           
             createdAt
             username
             commentCount
@@ -50,7 +67,6 @@ export const QUERY_ME = gql`
                 _id
                 enteredText
                 enteredTitle
-              
                 createdAt
                 commentCount
                 comments {
@@ -74,7 +90,6 @@ export const QUERY_USER = gql `
                 _id
                 enteredTitle
                 enteredText
-               
                 createdAt
                 commentCount
             }

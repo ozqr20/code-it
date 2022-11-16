@@ -6,6 +6,7 @@ import Header from "../src/components/Header";
 import Home from "../src/pages/Home/Home";
 import Profile from "../src/pages/Profile/Profile"
 import CreatePost from "../src/pages/CreatePost/CreatePost";
+import SinglePost from './pages/SinglePost/SinglePost';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -46,10 +47,10 @@ function App() {
             <Route path=":username" element={<Profile />} />
             <Route path="" element={<Profile />} />
           </Route>
-          {/* <Route
+          <Route
             path="/post/:id"
             element={<SinglePost />}
-          /> */}
+          />
         </Routes>
       </Router>
     </ApolloProvider>
