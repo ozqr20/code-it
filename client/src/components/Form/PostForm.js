@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import { ADD_POST } from '../../utils/mutations';
 import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
@@ -13,7 +13,7 @@ const PostForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredText, setEnteredText] = useState('');
 //   const [enteredSub, setEnteredSub] = useState('Code');
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
   const [addPost] = useMutation(ADD_POST, {
     update(cache, {data: { addPost }} ) {
@@ -50,12 +50,12 @@ const PostForm = (props) => {
   // submit form
   const addPostHandler = async (event) => {
     event.preventDefault();
+    // navigate('/', {replace: true})
     try {
         await addPost({
            variables: {enteredTitle, enteredText},
            
         });
-        navigate("/")
     } catch (e) {
         console.error(e);
     }
@@ -97,9 +97,9 @@ const PostForm = (props) => {
                     <option value="cute">CuteCode</option>
                     <option value="funny">FunnyCode</option> */}
                 
-           
+            {/* <Link to="/"> */}
 			<button type="submit" className="submit">Submit</button> 
-           
+            {/* </Link> */}
     </Form>
     
     </Col>

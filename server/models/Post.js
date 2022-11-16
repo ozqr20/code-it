@@ -16,11 +16,11 @@ const postSchema = new Schema(
             minLength: 1,
             maxLength: 40
         },
-        // enteredSub: {
-        //     type: String,
-        //     required: false
+        enteredSub: {
+            type: String,
+            required: false
 
-        // },
+        },
 
         createdAt: {
             type: Date,
@@ -40,8 +40,8 @@ const postSchema = new Schema(
     }
 );
 
-postSchema.virtual('commentCount').get(function () {
-    return this.comment.length;
+postSchema.virtual('reactionCount').get(function () {
+    return this.reaction.length;
     
 });
 
