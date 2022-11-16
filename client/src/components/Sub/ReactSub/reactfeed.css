@@ -1,0 +1,33 @@
+.feed{
+    flex:5.5
+}
+
+.feedWrapper{
+    padding: 20px;
+   
+}
+
+.titleCard {
+    font-weight: 500;
+    font-size: 45px;
+}
+
+.textCard {
+    font-size: 30px;
+
+}
+
+.comment {
+    width: 100px;
+}
+
+.card{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.hover:hover {
+    color: goldenrod;
+    cursor: pointer;
+}

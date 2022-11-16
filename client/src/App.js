@@ -7,6 +7,7 @@ import Home from "../src/pages/Home/Home";
 import Profile from "../src/pages/Profile/Profile"
 import CreatePost from "../src/pages/CreatePost/CreatePost";
 import Post from "../src/pages/Post/Post";
+import CreateIVPost from '../src/pages/CreateIVPost/CreateIVPost';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -50,6 +51,10 @@ function App() {
           <Route
             path="/post/:id"
             element={<Post />}
+          />
+          <Route
+          path="/createivpost"
+          element={<CreateIVPost/>}
           />
         </Routes>
       </Router>

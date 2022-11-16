@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './IVForm.css';
 import PostOpts from './PostOpts';
 import MediaThumbnail from './MediaThumbnail.js';
+import { Container, Col, Form } from 'react-bootstrap';
+
+import Rules from '../../components/Form/Rules'
 
 const IAForm = (props) => {
 
@@ -28,7 +31,9 @@ const IAForm = (props) => {
   }
 	
   return (
-		<form onSubmit={addIAHandler} className="wrapper">
+    <Container className="ivWrapper">
+        <Col xs={7} className="ivInput">
+		<Form onSubmit={addIAHandler} action="/">
 			{show && <MediaThumbnail file={uploadedFile}/>}
 			<PostOpts formType={props.formType} onSetFormType={props.onSetFormType}/>
 			<input 
@@ -37,15 +42,18 @@ const IAForm = (props) => {
 				placeholder="Title" 
 				className="title" 
 				value={enteredTitle}
-				onChange={titleChangeHandler}
+				onChange={(event) => setEnteredTitle(event.target.value)}
 			/>
-			<div className="uploadcontainer">
+			<div className="uploadContainer">
 				{/* EDIT: needs to say: "Drag and drop images or [Upload]" */}
 				{/* onChange will keep track of when file has been uploaded/changed. */}
 				<input type="file" onChange={fileUploadHandler} name="uploadedFile"/>
 			</div>
 			<button type="submit" className="upload">Submit</button> 
-    </form>
+    </Form>
+    </Col>
+    <Col md={{ span: 4, offset: 1 }} className="rulesReact"><Rules /></Col>
+    </Container>
   );
 }
 

@@ -2,23 +2,21 @@ import { Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Container, Dropdown, Row, Stack } from 'react-bootstrap';
 import IAForm from '../../components/Form/IVForm';
-import './createpost.css'
+import '../CreateIVPost/createivpost.css'
 
-const CreatePost = (props) => {
-  //const subredditList = ["r/Funny"]
+const CreateIVPost = (props) => {
+  
   return (
     <Fragment>
       <br/>
       <br/>
-      <Container className="postWrapper">
-        <Row>
-            <Col>
-            <Stack direction='horizontal'>
+      <Row>
+      <Stack direction='horizontal'>
+        <Col xs={4}>
               <div className="text-center">
               <h2>  Create a post:</h2>
               
               </div>
-              </Stack>
               </Col>
               <Col>
               <Dropdown>
@@ -31,6 +29,15 @@ const CreatePost = (props) => {
                   <Dropdown.Item href="#/action-3">c/CuteCode</Dropdown.Item>
               </Dropdown.Menu>
               </Dropdown>
+              </Col>
+              </Stack>
+              </Row>
+      <Container className="ivWrapper">
+        <Row>
+            <Col>
+            
+              
+             
               
               <br/>
               <br/>
@@ -44,4 +51,4 @@ const CreatePost = (props) => {
   );
 }
 
-export default CreatePost;
+export default CreateIVPost;

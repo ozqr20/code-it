@@ -1,33 +1,4 @@
-/* .wrapper {
-    border: 2px solid rgb(201, 102, 226);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
-    width: 100%;
-    margin-top: 2%;
-    background-color: whitesmoke;
-} */
-
-/* .title {
-    width: 98%;
-    height: 60px;
-    font-size: 1.5rem;
-    margin: 1%;
-} */
-
-.uploadContainer {
-    border: 2px solid rgb(32, 80, 88);
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 98%;
-    height: 300px;
-    color: rgb(64, 108, 136);
-}
-
-.ivWrapper {
+.wrapperPost {
     
     display: flex;
     align-items: flex-start;
@@ -52,16 +23,16 @@
     margin: 1%;
 }
 
-.ivInput {
+.formInput {
     padding-top: 55px;
 }
 
-.rulesReact {
+.rules {
     padding-top: 40px;
     padding-left: 10px;
 }
 
-.upload {
+.submit {
     width: 30%;
     height: 40px;
     margin: 2%;
@@ -72,7 +43,7 @@
     float: right;
 }
 
-.upload:hover {
+.submit:hover {
     background-color: #0275d8;
     color: whitesmoke
 }
