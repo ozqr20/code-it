@@ -39,8 +39,8 @@ export const QUERY_POST = gql`
 `;
 
 export const QUERY_COMMENT = gql `
-    query reply($id: ID!) {
-        reply(_id: $id) {
+    query comment($id: ID!) {
+        comment(_id: $id) {
             _id
             enteredText
             enteredTitle

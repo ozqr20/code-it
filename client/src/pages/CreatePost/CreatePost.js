@@ -5,7 +5,7 @@ import PostForm from '../../components/Form/PostForm';
 import './createpost.css'
 
 const CreatePost = (props) => {
-  //const subredditList = ["r/Funny"]
+  
   return (
     <Fragment>
       <br/>

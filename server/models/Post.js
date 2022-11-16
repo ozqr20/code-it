@@ -40,8 +40,8 @@ const postSchema = new Schema(
     }
 );
 
-postSchema.virtual('reactionCount').get(function () {
-    return this.reaction.length;
+postSchema.virtual('commentCount').get(function () {
+    return this.comment.length;
     
 });
 

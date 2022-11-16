@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import CommentList from '../../components/CommentList';
+import CommentList from '../../components/CommentList/index';
 import CommentForm from '../../components/CommentForm';
 
 import Auth from '../../utils/auth';
@@ -28,7 +28,7 @@ const SinglePost = (props) => {
           <span style={{ fontWeight: 700 }} className="text-light">
             {post.username}
           </span>{' '}
-          posted on {post.createdAt}
+          Posted on {post.createdAt}
         </p>
         <div className="card-body">
           <p>{post.enteredText}</p>

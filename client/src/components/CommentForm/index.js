@@ -20,7 +20,6 @@ const CommentForm = ({ postId }) => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
       await addComment({
         variables: { commentBody, postId },
@@ -46,7 +45,7 @@ const CommentForm = ({ postId }) => {
           placeholder="Leave a comment."
           value={commentBody}
           className="form-input col-12 col-md-9"
-          onChange={(event) => setBody(event.target.value)}
+          onChange={handleChange}
         ></textarea>
 
         <button className="submit" type="submit">
