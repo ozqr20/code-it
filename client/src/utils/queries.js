@@ -42,7 +42,8 @@ export const QUERY_COMMENT = gql `
     query comment($id: ID!) {
         comment(_id: $id) {
             _id
-            commentBody
+            enteredText
+            enteredTitle
             createdAt
             username
             commentCount
