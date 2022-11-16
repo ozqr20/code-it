@@ -34,10 +34,10 @@ const reactpostSchema = new Schema(
     }
 );
 
-reactpostSchema.virtual('reactcommentCount').get(function () {
-    return this.reactcomment.length;
+// reactpostSchema.virtual('reactcommentCount').get(function () {
+//     return this.reactcomment.length;
     
-});
+// });
 
 const ReactPost = model('ReactPost', reactpostSchema);
 

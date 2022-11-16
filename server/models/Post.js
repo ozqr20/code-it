@@ -34,10 +34,10 @@ const postSchema = new Schema(
     }
 );
 
-postSchema.virtual('commentCount').get(function () {
-    return this.comment.length;
+// postSchema.virtual('commentCount').get(function () {
+//     return this.comment.length;
     
-});
+// });
 
 const Post = model('Post', postSchema);
 

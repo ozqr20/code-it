@@ -109,7 +109,7 @@ const Feed = ({ posts }) => {
                          style={{ fontWeight: 600, textDecoration: "none", color: "inherit" }}>
                           <Stack direction="horizontal" gap={3}>
                           <div className="hover"><ChatSquareHeart width="30" height="30"/></div>
-                          <div className="hover">Comments {post.commentCount}</div>
+                          <div className="hover">Comments </div>
                           <div className="hover"><Gift width="30" height="30"/></div>
                           <div className="hover">Award</div>
                           <div className="hover"><Share width="30" height="30"/></div>
