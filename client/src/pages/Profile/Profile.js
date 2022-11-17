@@ -15,7 +15,7 @@ import { useQuery } from '@apollo/client';
 import ProfileBot from "../../assets/images/customer-support-bot.png"
 import '../Profile/profile.css'
 //import Auth from '../../utils/auth';
-import Feed from '../../components/Feed';
+import ProfileEdit from '../../components/ProfileEdit';
 
 const Profile = (props) => {
     const { username: userParam } = useParams();
@@ -59,17 +59,13 @@ const Profile = (props) => {
         <div>
       <div className="flex-row mb-3">
         <h2 className="text-secondary text-center p-3 display-inline-block">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+          Viewing {userParam ? `${user.username}'s` : 'Your'} Profile.
         </h2>
-        </div>
-       
-
-
-        
+        </div>        
             <Container className="profileContainer">
-                <Row className="profileBar">
+                
                     <Col md={{ span: 6, offset: 3 }}>
-                        <Card style={{ borderRadius: '15px' }}>
+                        <Card style={{ borderRadius: '15px' , boxShadow: "5px 5px 5px"}}>
                             <Card.Body className="text-center">
                                 <div className="mt-3 mb-4">
                                     <Card.Img src={ProfileBot}
@@ -115,14 +111,9 @@ const Profile = (props) => {
                             </Card.Body>
                         </Card>
                         </Col>
-                        <Col>
-                        < Feed
-                        title={`${user.username}'s feed`}
-                        posts={user.posts}
-                        />
-                        </Col>
-                </Row>
+                        
                 <hr></hr>
+                <ProfileEdit/>
             </Container>
             </div>
     );

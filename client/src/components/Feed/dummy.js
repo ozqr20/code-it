@@ -1,40 +1,17 @@
-import "../Feed/feed.css";
+
 import React from 'react';
-// import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-//import Auth from '../utils/auth';
-import AddPost from "../../components/AddPost";
 import DeletePost from "../../components/DeletePost";
-// import { QUERY_POSTS } from "../../utils/queries";
 import { Card, Stack, Col, Row, Dropdown, Container, Button } from 'react-bootstrap';
 import { ThreeDots, Person, PencilSquare, Eyeglasses, ChatSquareHeart, Gift, Share, CloudDownload } from 'react-bootstrap-icons';
-import Bot from '../../assets/images/bot.png'
-import VoteBar from "../VoteBar";
-import Dummy from "./dummy";
-
-
-
-//const loggedIn = Auth.loggedIn();
-
-const Feed = ({ posts }) => {
+import BotBlue from '../../assets/images/bot-blue.png'
+import VoteBar from '../VoteBar';
+const Dummy = () => {
   return (
+    
 
-    <div className="feed container gx-12">
-      <div className="feedWrapper row">
-        {/* {loggedIn && ( */}
-        <AddPost />
-        {/*  )} */}
-        {/* {PostsDummy.map((p) => (
-          <Posts key={p.id} posts={p} />
-        ))} */}
-
-        {posts &&
-          posts.map(post => (
-
-
-
-
-            <Card key={post._id} >
+       
+            <Card >
 
               <Container>
                 <Row>
@@ -49,19 +26,19 @@ const Feed = ({ posts }) => {
 
                         <Col xs={1}>
                           <div className="">
-                            <Card.Img src={Bot}
+                            <Card.Img src={BotBlue}
                               className="rounded-circle" style={{ width: '50px' }} />
                           </div>
                         </Col>
                         <Col>
-                          c/codeIt
+                          c/Help
                           <br></br>
                           <Link
-                            to={`/profile/${post.username}`}
+                            to={`/profile/wolverine`}
                             style={{ fontWeight: 750, textDecoration: "none", color: "inherit" }}
                             className="text-start"
                           >
-                            u/{post.username}
+                            u/wolverine
                           </Link>
                         </Col>
                         <Col className="text-end">
@@ -79,7 +56,7 @@ const Feed = ({ posts }) => {
                               <Dropdown.Item><Stack direction="horizontal"> <DeletePost />Delete Post</Stack></Dropdown.Item>
                               <Dropdown.Item href="#/action-2"><Button type="submit" variant="warning" className="text-center"><PencilSquare /></Button>Edit Post</Dropdown.Item>
                               <Dropdown.Item href="#/action-3"><Link
-                                to={`/profile/${post.username}`}
+                                to={`/profile/wolverine`}
                                 style={{ textDecoration: "none", color: "inherit" }}
                                 className="text-start"
                               > <Button type="submit" variant="success" className="text-center"><Person /></Button> See Profile</Link>
@@ -91,13 +68,18 @@ const Feed = ({ posts }) => {
                         </Col>
                       </Row>
                     </Card.Header>
-                    <Card.Text className="titleCard">{post.enteredTitle}</Card.Text>
+                    <Card.Text className="titleCard">Messed up another laptop</Card.Text>
                     <Card.Body>
 
 
                       <Card.Text className="textCard">
-                        {post.enteredText}
-                        <img className="upImg" src={post.uploadedFile} alt="" />
+                        Any vibranium laptops? asking for a friend
+                        
+                        <img
+                          className="postUploadImg"
+                          src=""
+                          alt=""
+                        />
                       </Card.Text>
 
 
@@ -108,7 +90,7 @@ const Feed = ({ posts }) => {
                       <Stack direction="horizontal" gap={8}>
                         <Col>
 
-                          <Link to={`/post/${post._id}`}
+                          <Link to={`/post/`}
                             style={{ fontWeight: 600, textDecoration: "none", color: "inherit" }}>
                             <Stack direction="horizontal" gap={3}>
                               <div className="hover"><ChatSquareHeart width="30" height="30" /></div>
@@ -123,7 +105,7 @@ const Feed = ({ posts }) => {
                           </Link>
                         </Col>
                         <Col className="text-end">
-                          <div>{post.createdAt}</div>
+                          <div>Nov 16th, 2002 at 8:50 pm</div>
                         </Col>
                       </Stack>
                     </Card.Footer>
@@ -131,14 +113,10 @@ const Feed = ({ posts }) => {
                 </Row>
               </Container>
             </Card>
-          ))
-        }
-       <div><Dummy/></div> 
-      </div>
-    </div>
+          
+     
 
   );
- 
 }
 
-export default Feed;
+export default Dummy;

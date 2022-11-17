@@ -1,37 +1,36 @@
 import "./sidebar.css";
 import {
-    Rss,
-    People,
-    Chat,
-    CameraReels,
-    Bookmark,
-    Briefcase,
-    CalendarEvent,
-    Mortarboard,
+  Rss,
+  People,
+  Chat,
+  CameraReels,
+  Bookmark,
+  Briefcase,
+  CalendarEvent,
+  Mortarboard,
 } from 'react-bootstrap-icons';
 import {
-  
+
   Container,
   Row,
 } from 'react-bootstrap';
-// import { Users } from "../../dummyData";
+import { useNavigate } from 'react-router-dom'
 
 
 function Sidebar() {
+  const navigate = useNavigate();
   return (
-    
+
     // <div className="sidebar">
-      <Container className="sideContainer">
-        <Row className="sideBar">
-          
-          <ul className="sidebarList">
+    <Container className="sideContainer">
+      <Row className="sideBar">
+
+        <ul className="sidebarList">
           <li className="sidebarListItem">
-            <Rss className="sidebarIcon" />
+            <Rss onClick={(e) => {
+              navigate("/");
+            }} className="sidebarIcon" />
             <span className="sidebarListItemText">Feed</span>
-          </li>
-          <li className="sidebarListItem">
-            <Chat className="sidebarIcon" />
-            <span className="sidebarListItemText">Chats</span>
           </li>
           <li className="sidebarListItem">
             <CameraReels className="sidebarIcon" />
@@ -43,15 +42,13 @@ function Sidebar() {
           </li>
           <li className="sidebarListItem">
             <Bookmark className="sidebarIcon" />
-            <span className="sidebarListItemText">Bookmarks</span>
+            <span className="sidebarListItemText">Saved Posts</span>
           </li>
           <li className="sidebarListItem">
-            <Briefcase className="sidebarIcon" />
+            <Briefcase onClick={(e) => {
+              navigate("/jobs");
+            }} className="sidebarIcon" />
             <span className="sidebarListItemText">Jobs</span>
-          </li>
-          <li className="sidebarListItem">
-            <CalendarEvent className="sidebarIcon" />
-            <span className="sidebarListItemText">Events</span>
           </li>
           <li className="sidebarListItem">
             <Mortarboard className="sidebarIcon" />
@@ -65,11 +62,11 @@ function Sidebar() {
             <CloseFriend key={u.id} user={u} />
           ))}
         </ul> */}
-          
-        </Row>
-      </Container>
+
+      </Row>
+    </Container>
     // </div>
-    
+
   );
 }
 

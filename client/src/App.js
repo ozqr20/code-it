@@ -11,6 +11,7 @@ import CreateIVPost from '../src/pages/CreateIVPost/CreateIVPost';
 import ReactHome from '../src/pages/ReactHome/ReactHome';
 import CreateReactPost from '../src/pages/CreateReactPost/CreateReactPost';
 import ReactPost from './components/Sub/ReactSub/ReactPost';
+import Jobs from './pages/Jobs/Jobs';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -70,6 +71,10 @@ function App() {
             <Route
             path="/reactpost/:id"
             element={<ReactPost />}
+          />
+          <Route
+            path="/jobs"
+            element={<Jobs />}
           />
         </Routes>
       </Router>
