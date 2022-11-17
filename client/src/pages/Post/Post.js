@@ -34,7 +34,7 @@ const SinglePost = (props) => {
         </div>
       </div>
 
-      {post.postCount > 0 && (
+      {post.commentCount > 0 && (
         <CommentList comments={post.comments} />
       )}
 

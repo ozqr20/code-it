@@ -137,20 +137,14 @@ function Header() {
                                     Sign Up
                                 </Button>
                                 <Modal show={modalState === "modal-one"} onHide={handleClose}>
-                                    <Modal.Header closeButton>
-                                        <Modal.Title>Sign Up</Modal.Title>
+                                    <Modal.Header className="bg-warning" closeButton>
+                                        <Modal.Title style={{fontFamily: 'Cairo Play', fontSize: '40px'}}>code-it</Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
                                         <ApolloProvider client={client}>
                                             <Signup />
                                         </ApolloProvider>
                                     </Modal.Body>
-                                    <Modal.Footer>
-
-                                        <Button variant="secondary" onClick={handleClose}>
-                                            Sign Up!
-                                        </Button>
-                                    </Modal.Footer>
                                 </Modal>
                             
 
@@ -159,20 +153,22 @@ function Header() {
                                     Log In
                                 </Button>
                                 <Modal show={modalState === "modal-two"} onHide={handleClose}>
-                                    <Modal.Header closeButton>
-                                        <Modal.Title>Log In</Modal.Title>
+                                    <Modal.Header className="bg-warning" closeButton>
+                                        <Modal.Title style={{fontFamily: 'Cairo Play', fontSize: '40px'}}>code-it</Modal.Title>
                                     </Modal.Header>
-                                    <Modal.Body>
+                                    
+                                    <Modal.Body className="text-center">
                                         <ApolloProvider client={client}>
+                                            
                                             <Login />
                                         </ApolloProvider>
                                     </Modal.Body>
-                                    <Modal.Footer>
+                                    {/* <Modal.Footer>
 
-                                        <Button variant="secondary" onClick={handleClose}>
+                                        {/* <Button variant="secondary" onClick={handleClose}>
                                             Log In
-                                        </Button>
-                                    </Modal.Footer>
+                                        </Button> 
+                                    </Modal.Footer> */}
                                 </Modal>
                                 </Stack>
                             )}
@@ -191,8 +187,8 @@ function Header() {
                                     <Dropdown.Item href="#/action-2">Help Center</Dropdown.Item>
                                     <Dropdown.Item href="#/action-3">Terms & Policies</Dropdown.Item>
                                     <Dropdown.Item href="#/action-3">Advertise on Codeit</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Sign Up</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Log In</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleShowModalTwo}>Sign Up</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleShowModalOne}>Log In</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
-
+import { Container, Col } from 'react-bootstrap';
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
 
@@ -34,10 +34,11 @@ const handleFormSubmit = async event => {
 };
 
   return (
-    <main className='flex-row justify-center mb-4'>
-      <div className='col-12 col-md-6'>
+    <Container className="text-center" style={{padding: '20px'}}>
+    <Col  md="auto" style={{padding: '20px'}}>
+     
         <div className='card'>
-          <h4 className='card-header'>Login</h4>
+          <h4 className='card-header text-center'>Login</h4>
           <div className='card-body'>
             <form onSubmit={handleFormSubmit}>
               <input
@@ -58,15 +59,15 @@ const handleFormSubmit = async event => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='btn d-block w-100' type='submit'>
+              <button className='btn d-block w-100' style={{fontWeight: "500", fontSize: "25px"}} type='submit'>
                 Submit
               </button>
             </form>
             {error && <div>Login failed</div>}
           </div>
         </div>
-      </div>
-    </main>
+        </Col>
+      </Container>
   );
   
 };
