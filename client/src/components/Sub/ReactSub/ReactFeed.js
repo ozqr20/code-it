@@ -1,11 +1,11 @@
 import "../../Sub/ReactSub/reactfeed.css";
 import React from 'react';
-import { useQuery } from "@apollo/client";
-import { Link, useParams } from "react-router-dom";
+// import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 //import Auth from '../utils/auth';
 import ReactPost from "./ReactPost";
 // import DeletePost from "../../../components/DeletePost";
-import { QUERY_REACT_POSTS } from "../../../utils/queries";
+// import { QUERY_REACT_POSTS } from "../../../utils/queries";
 import { Card, Stack, Col, Row, Dropdown, Container, Button } from 'react-bootstrap';
 import { ThreeDots, Person, PencilSquare, Eyeglasses, ChatSquareHeart, Gift, Share, CloudDownload } from 'react-bootstrap-icons';
 import Bot from '../../../assets/images/bot.png'

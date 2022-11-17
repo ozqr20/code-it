@@ -21,12 +21,12 @@ const Profile = (props) => {
     const { username: userParam } = useParams();
 
     // const [addFriend] = useMutation(ADD_FRIEND);
-    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
       variables: { username: userParam },
     });
   
     const user = data?.me || data?.user || {};
-    const posts = data?.posts || [];
+    // const posts = data?.posts || [];
 
     // navigate to personal profile page if username is yours
 //   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
