@@ -47,6 +47,7 @@ Currently seeking those who can provide eyeball time, brain juice, lines of code
 # Contributers
 
  **[Brian Nelson](https://github.com/brian-nelson10)**
+ **[Oscar Manosalva](https://github.com/ozqr20)**
 
 
 
